@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>inBeach</title>
+</head>
+
+<body>
+    <header>
+        <a href="#">
+            <h1 class="inbeach-header">inBeach</h1>
+        </a>
+        <nav id="nav-desktop">
+
+            <a href="#fnb"><span></span>F&B</a>
+            <a href="#surfing">Surfing</a>
+            <a href="#daytrips">Daytrips</a>
+            <div class="sub-island">
+                <a href="#islands"><span></span>Islands</a>
+                <div class="container desktop-dropdown">
+                    <div class="dropdown-islands">
+                        <ul>
+                            <li class="sumatera"><a href="#sumatera">Sumatera</a>
+                                <div class="sumatera-island">
+                                    <ul>
+                                        <li><a href="#">Pantai A</a></li>
+                                        <li><a href="#">Pantai B</a></li>
+                                        <li><a href="#">Pantai C</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#java">Java</a></li>
+                            <li><a href="#bali">Bali</a></li>
+                            <li><a href="#nusatenggara">Nusa Tenggara</a></li>
+                        </ul>
+                    </div>
+                    <div class="island-list">
+                        <div class="java-island">
+                            <ul>
+                                <li><a href="#">Pantai D</a></li>
+                                <li><a href="#">Pantai E</a></li>
+                                <li><a href="#">Pantai F</a></li>
+                            </ul>
+                        </div>
+                        <div class="bali-island">
+                            <ul>
+                                <li><a href="#">Pantai G</a></li>
+                                <li><a href="#">Pantai H</a></li>
+                                <li><a href="#">Pantai I</a></li>
+                            </ul>
+                        </div>
+                        <div class="nusa-tenggara-island">
+                            <ul>
+                                <li><a href="#">Pantai J</a></li>
+                                <li><a href="#">Pantai K</a></li>
+                                <li><a href="#">Pantai L</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <nav id="nav-mobile">
+            <a href="#beach"><span>Islands</span></a>
+            <a href="#daytrips"><span>Daytrips</span></a>
+            <a href="#surfing"><span>Surfing</span></a>
+            <a href="#fnb"><span>F&B</span></a>
+        </nav>
+    </header>
+    <main>
+        <div class="landing-page">
+            <h1>Relaxing your mind in various amazing landscape</h1>
+            <div class="container beach-environment">
+                <img src="assets/img/Beach environment/beach-ball 1.png" alt="Beach Ball">
+                <img src="assets/img/Beach environment/starfish 1.png" alt="starfish">
+                <img src="assets/img/Beach environment/umbrella 1.png" alt="Umbrella">
+                <img src="assets/img/Beach environment/towel 1.png" alt="Towel">
+                <img src="assets/img/Beach environment/shell 1.png" alt="Shell">
+                <img src="assets/img/Beach environment/surfboard 1.png" alt="Surfboard">
+                <img src="assets/img/Beach environment/beach-towel 1.png" alt="Beach Towel">
+                <img src="assets/img/Beach environment/rubber-ring 1.png" alt="Rubber Ring">
+            </div>
+            <div class="sea-waves">
+                <!-- <img src="assets/img/Sea wave/Vector 6.png" alt="Sea Waves"> -->
+                <img src="assets/img/Sea wave/Vector 5.png" alt="Sea Waves">
+                <img src="assets/img/Sea wave/Vector 4.png" alt="Sea Waves">
+                <img src="assets/img/Sea wave/Vector 3.png" alt="Sea Waves">
+                <img src="assets/img/Sea wave/Vector 2.png" alt="Sea Waves">
+                <img src="assets/img/Sea wave/Vector 1.png" alt="Sea Waves">
+            </div>
+        </div>
+    </main>
+    <script>
+        const desktopDropdown = document.querySelector('.desktop-dropdown');
+        const subIsland = document.querySelector('.sub-island');
+        const fnb = document.querySelector('[href="#fnb"]');
+        const main = document.querySelector('main'); 
+        fnb.addEventListener('click', function () {
+            desktopDropdown.classList.add('close-dropdown');
+            desktopDropdown.addEventListener('webkitAnimationEnd', function () {
+                desktopDropdown.classList.remove('close-dropdown');
+                desktopDropdown.style.display = 'none';
+                desktopDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
+            }, false);
+        });
+        main.addEventListener('click', function () {
+            desktopDropdown.classList.add('close-dropdown');
+            desktopDropdown.addEventListener('webkitAnimationEnd', function () {
+                desktopDropdown.classList.remove('close-dropdown');
+                desktopDropdown.style.display = 'none';
+                desktopDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
+            }, false);
+        });
+        subIsland.addEventListener('click', () => {
+            desktopDropdown.style.display = 'flex';
+        });
+    </script>
+</body>
+
+</html>

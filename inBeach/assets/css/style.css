@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;600&family=Seaweed+Script&display=swap");
+
+:root {
+  --bg-main-color: #ffb356;
+  --bg-second-color: #00ffff;
+  --base-color: #f1f1f1;
+
+  --container-padding: 20px;
+
+  --transition-04s: 0.4s;
+  --transition-08s: 0.8s;
+  --transition-1s: 1s;
+  --transition-1-2s: 1.2s;
+  --transition-1-5s: 1.5s;
+  --transition-1-8s: 1.8s;
+
+  --popup-animation: cubic-bezier(0.2, -0.55, 0.27, 1.55);
+}
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: var(--bg-main-color);
+  width: 100%;
+  max-height: 100vh;
+}
+@keyframes header-nav-animation {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+header {
+  font-family: "Karla", sans-serif;
+  color: var(--base-color);
+  padding-block-start: 30px;
+  display: flex;
+  /* background-color: red; */
+  width: 100%;
+  height: 10vh;
+  -webkit-animation: header-nav-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: header-nav-animation var(--transition-1s) var(--popup-animation)
+    normal;
+}
+
+.container {
+  padding: var(--container-padding);
+}
+
+.inbeach-header {
+  padding-inline-start: 2em;
+}
+#nav-desktop a:focus > span::after {
+  transition: var(--transition-04s);
+  transform: translateX(-23px) translateY(2px) rotate(45deg);
+}
+#nav-desktop a:focus > span::before {
+  transition: var(--transition-04s);
+  transform: translateY(17px) translateX(-7px) rotate(135deg);
+}
+#nav-desktop a > span::after,
+#nav-desktop a > span::before {
+  transition: var(--transition-04s);
+
+  content: "";
+  position: relative;
+  right: 10px;
+  display: inline-block;
+  background-color: var(--base-color);
+  border-radius: 100px;
+  width: 25px;
+  height: 5px;
+}
+#nav-desktop a > span::after {
+  transform: rotate(-45deg);
+  right: 10px;
+  top: 2px;
+}
+#nav-desktop a > span::before {
+  transform: rotate(45deg);
+  bottom: 14px;
+  right: -15px;
+}
+#nav-desktop > a::before {
+  content: "";
+  position: relative;
+  background-color: var(--base-color);
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  right: -20px;
+  bottom: 1px;
+}
+#nav-desktop > a:nth-child(1)::before {
+  display: inline-block;
+}
+#nav-desktop a[href="#islands"]::before {
+  content: "";
+  position: relative;
+  background-color: var(--base-color);
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  right: -20px;
+  bottom: 1px;
+  display: inline-block;
+}
+#nav-desktop a[href="#fnb"]::after,
+#nav-desktop a[href="#islands"]::after {
+  width: 110%;
+}
+#nav-desktop > a::after,
+.sub-island > a::after {
+  content: "";
+  position: relative;
+  display: block;
+  background-color: var(--base-color);
+  border-radius: 10px;
+  height: 100px;
+  top: -140px;
+  transform: translateY(-100px);
+  transition: var(--transition-1s);
+}
+#nav-desktop > a:hover::after,
+.sub-island > a:hover::after {
+  cursor: pointer;
+  transform: translateY(0);
+  transition: var(--transition-04s);
+}
+#nav-desktop > a,
+.sub-island > a {
+  text-decoration: none;
+  padding-inline: 2em;
+  float: right;
+}
+#nav-desktop {
+  color: var(--base-color);
+  padding-inline-end: 5em;
+  font-weight: 600;
+  font-size: 1.5em;
+  flex-grow: 1;
+}
+
+.desktop-dropdown {
+  z-index: 1;
+  display: none;
+  position: absolute;
+  top: 4em;
+  left: 43.5em;
+  color: var(--bg-main-color);
+  background-color: var(--base-color);
+  border-radius: 10px;
+  transition: var(--transition-1s);
+  -webkit-animation: dropdown-animation var(--transition-04s) ease-in-out normal;
+  animation: dropdown-animation var(--transition-04s) ease-in-out normal;
+}
+.desktop-dropdown a {
+  font-family: "Karla", sans-serif;
+}
+.island-list {
+  display: flex;
+}
+@keyframes island-list-animation {
+  from {
+    opacity: .5;
+    width: 0;
+  } to {
+    width: 380px;
+  }
+}
+.dropdown-islands li ,
+.dropdown-islands a,
+.island-list li {
+  cursor: pointer;
+  padding: .2em;
+  list-style-position: inside;
+}
+.island-list li {
+  list-style-type: square;
+}
+.sumatera-island {
+  display: none;
+  position: absolute;
+  top: 15px;
+  margin-left: 220px;
+}
+.island-list{
+  display: none;
+  padding-left: 20px;
+}
+.sumatera {
+  width: 0;
+  transition: all var(--transition-1s);
+}
+.sumatera:hover {
+  width: 380px;
+  animation: island-list-animation var(--transition-1s) ease-in-out normal;
+}
+.sumatera:hover .sumatera-island {
+  display: block;
+  animation: island-list-animation var(--transition-1s) ease-in-out normal;
+
+}
+@keyframes dropdown-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes close-dropdown-animation {
+  from {
+    opacity: 1;
+  } to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+.close-dropdown {
+  -webkit-animation: close-dropdown-animation var(--transition-08s) ease-in-out normal;
+  animation: close-dropdown-animation var(--transition-08s) ease-in-out normal;
+}
+/* Nav mobile */
+#nav-mobile {
+  display: none;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  /* padding: 20px; */
+}
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes landing-text {
+  from {
+    transform: translateX(-2em);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.landing-page h1 {
+  font-family: "Seaweed Script", cursive;
+  font-size: 4em;
+  text-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  color: var(--base-color);
+  padding-top: 1em;
+  padding-left: 2em;
+  -webkit-animation: landing-text var(--transition-1s) ease-in-out normal;
+  animation: landing-text var(--transition-1s) ease-in-out normal;
+}
+
+.beach-environment {
+  height: 50vh;
+}
+.beach-environment img {
+  position: relative;
+}
+@keyframes beach-environment-animation {
+  from {
+    transform: scale(0);
+    filter: blur(8px);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Beach ball */
+.beach-environment img:nth-child(1) {
+  bottom: 100px;
+  left: 100px;
+  -webkit-animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+}
+/* Patrick */
+.beach-environment img:nth-child(2) {
+  z-index: 8;
+  top: 110px;
+  left: 100px;
+  -webkit-animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+}
+/* Umbrella Beach */
+.beach-environment img:nth-child(3) {
+  bottom: 0;
+  top: 100px;
+  left: 100px;
+  -webkit-animation: beach-environment-animation var(--transition-1-2s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1-2s)
+    var(--popup-animation) normal;
+}
+/* Towel */
+.beach-environment img:nth-child(4) {
+  z-index: -1;
+  top: 100px;
+  left: -60px;
+  -webkit-animation: beach-environment-animation var(--transition-1-5s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1-5s)
+    var(--popup-animation) normal;
+}
+/* Shell */
+.beach-environment img:nth-child(5) {
+  top: 150px;
+  left: 100px;
+  -webkit-animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+}
+/* Surfboard */
+.beach-environment img:nth-child(6) {
+  z-index: 10;
+  position: absolute;
+  right: 140px;
+  -webkit-animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+}
+/* Beach towel 2 */
+.beach-environment img:nth-child(7) {
+  position: absolute;
+  right: -60px;
+  -webkit-animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+}
+/* Rubber ring */
+.beach-environment img:nth-child(8) {
+  position: absolute;
+  z-index: 9;
+  rotate: -90deg;
+  bottom: 200px;
+  right: 0;
+  -webkit-animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+}
+
+.sea-waves {
+  padding: 0;
+  width: 100%;
+  height: 40vh;
+}
+.sea-waves img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+@keyframes sea-waves-animation {
+  from {
+    transform: translateY(500px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes sea-waves-animation-residual {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.sea-waves img:nth-child(1) {
+  z-index: -1;
+  bottom: 100px;
+  -webkit-animation: sea-waves-animation-residual 2s var(--popup-animation)
+    normal;
+  animation: sea-waves-animation-residual 2s var(--popup-animation) normal;
+}
+.sea-waves img:nth-child(2) {
+  z-index: 1;
+  bottom: 50px;
+  -webkit-animation: sea-waves-animation 1.4s var(--popup-animation) normal;
+  animation: sea-waves-animation 1.4s var(--popup-animation) normal;
+}
+.sea-waves img:nth-child(4) {
+  z-index: 2;
+  bottom: 10px;
+  -webkit-animation: sea-waves-animation 1.2s var(--popup-animation) normal;
+  animation: sea-waves-animation 1.2s var(--popup-animation) normal;
+}
+.sea-waves img:nth-child(3) {
+  z-index: 3;
+  bottom: -20px;
+  -webkit-animation: sea-waves-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: sea-waves-animation var(--transition-1s) var(--popup-animation)
+    normal;
+}
+.sea-waves img:nth-child(5) {
+  z-index: 4;
+  bottom: -60px;
+  -webkit-animation: sea-waves-animation 0.8s var(--popup-animation) normal;
+  animation: sea-waves-animation 0.8s var(--popup-animation) normal;
+}
+/* .sea-waves img:nth-child(1) {
+    display: none;
+  z-index: 5;
+  bottom: -50px;
+} */
