@@ -6,6 +6,10 @@
   --base-color: #f1f1f1;
 
   --container-padding: 20px;
+  --island-list-initial-width: 210px;
+  --island-list-initial-height: 2em;
+  --island-list-width: 550px;
+  --island-list-height: 200px;
 
   --transition-04s: 0.4s;
   --transition-08s: 0.8s;
@@ -15,6 +19,7 @@
   --transition-1-8s: 1.8s;
 
   --popup-animation: cubic-bezier(0.2, -0.55, 0.27, 1.55);
+  
 }
 * {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -107,7 +112,9 @@ header {
 #nav-desktop > a:nth-child(1)::before {
   display: inline-block;
 }
-#nav-desktop a[href="#islands"]::before {
+#nav-desktop a[href="#islands"]::before,
+#nav-desktop a[href="#fnb"]::before
+{
   content: "";
   position: relative;
   background-color: var(--base-color);
@@ -123,7 +130,9 @@ header {
   width: 110%;
 }
 #nav-desktop > a::after,
-.sub-island > a::after {
+.sub-island > a::after,
+.sub-fnb > a::after
+{
   content: "";
   position: relative;
   display: block;
@@ -135,13 +144,17 @@ header {
   transition: var(--transition-1s);
 }
 #nav-desktop > a:hover::after,
-.sub-island > a:hover::after {
+.sub-island > a:hover::after,
+.sub-fnb > a:hover::after
+{
   cursor: pointer;
   transform: translateY(0);
   transition: var(--transition-04s);
 }
 #nav-desktop > a,
-.sub-island > a {
+.sub-island > a,
+.sub-fnb > a
+{
   text-decoration: none;
   padding-inline: 2em;
   float: right;
@@ -154,7 +167,9 @@ header {
   flex-grow: 1;
 }
 
-.desktop-dropdown {
+.desktop-island-dropdown,
+.desktop-fnb-dropdown
+{
   z-index: 1;
   display: none;
   position: absolute;
@@ -167,50 +182,72 @@ header {
   -webkit-animation: dropdown-animation var(--transition-04s) ease-in-out normal;
   animation: dropdown-animation var(--transition-04s) ease-in-out normal;
 }
-.desktop-dropdown a {
+.desktop-island-dropdown a,
+.desktop-fnb-dropdown a
+{
   font-family: "Karla", sans-serif;
-}
-.island-list {
-  display: flex;
 }
 @keyframes island-list-animation {
   from {
-    opacity: .5;
-    width: 0;
+    opacity: 0;
+    height: var(--island-list-initial-height);
+    width: var(--island-list-initial-width);
   } to {
-    width: 380px;
+    height:  var(--island-list-height);
+    width: var(--island-list-width);
   }
 }
 .dropdown-islands li ,
 .dropdown-islands a,
-.island-list li {
+.dropdown-fnb li ,
+.dropdown-fnb a
+{
   cursor: pointer;
   padding: .2em;
   list-style-position: inside;
 }
-.island-list li {
-  list-style-type: square;
-}
-.sumatera-island {
+.sumatera-island,
+.java-island,
+.bali-island,
+.nusa-tenggara-island,
+.restaurant-location,
+.cafe-location
+ {
   display: none;
   position: absolute;
   top: 15px;
   margin-left: 220px;
 }
-.island-list{
-  display: none;
-  padding-left: 20px;
-}
-.sumatera {
-  width: 0;
+.sumatera,
+.java,
+.bali,
+.nusatenggara,
+.restaurant,
+.cafe
+{
+  width: var(--island-list-initial-width);
+  height: var(--island-list-initial-height);
   transition: all var(--transition-1s);
 }
-.sumatera:hover {
-  width: 380px;
+.sumatera:hover,
+.java:hover,
+.bali:hover,
+.nusatenggara:hover,
+.restaurant:hover,
+.cafe:hover
+{
+  height:  var(--island-list-height);
+  width: var(--island-list-width);
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
 }
-.sumatera:hover .sumatera-island {
-  display: block;
+.sumatera:hover .sumatera-island,
+.java:hover .java-island,
+.bali:hover .bali-island,
+.nusatenggara:hover .nusa-tenggara-island,
+.restaurant:hover .restaurant-location,
+.cafe:hover .cafe-location
+{
+  display: flex;
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
 
 }
