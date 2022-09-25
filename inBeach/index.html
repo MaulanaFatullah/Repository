@@ -155,57 +155,7 @@
             </div>
         </div>
     </main>
-    <script>
-        const desktopIslandDropdown = document.querySelector('.desktop-island-dropdown');
-        const desktopFnbDropdown = document.querySelector('.desktop-fnb-dropdown');
-        const subIsland = document.querySelector('.sub-island');
-        const subFnb = document.querySelector('.sub-fnb');
-        const main = document.querySelector('main');
-
-
-        main.addEventListener('click', function () {
-            desktopIslandDropdown.classList.add('close-dropdown');
-            desktopFnbDropdown.classList.add('close-dropdown');
-            desktopIslandDropdown.addEventListener('webkitAnimationEnd', function () {
-                desktopIslandDropdown.classList.remove('close-dropdown');
-                desktopIslandDropdown.style.display = 'none';
-                desktopIslandDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
-            }, false);
-            desktopFnbDropdown.addEventListener('webkitAnimationEnd', function () {
-                desktopFnbDropdown.classList.remove('close-dropdown');
-                desktopFnbDropdown.style.display = 'none';
-                desktopFnbDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
-            }, false);
-        });
-
-        subFnb.addEventListener('click', function () {
-            if (desktopIslandDropdown.style.display = 'flex') {
-                desktopIslandDropdown.style.display = 'none';
-                
-                desktopIslandDropdown.classList.add('close-dropdown');
-                // webkitAnimationEnd issue 
-                desktopIslandDropdown.addEventListener('webkitAnimationEnd', function () {
-                    desktopFnbDropdown.style.display = 'flex';
-                    desktopIslandDropdown.classList.remove('close-dropdown');
-                    desktopIslandDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
-                }, false);
-            }
-            
-
-        });
-        
-        subIsland.addEventListener('click', () => {
-            desktopFnbDropdown.style.display = 'none';
-            desktopIslandDropdown.style.display = 'flex';
-
-            desktopFnbDropdown.classList.add('close-dropdown');
-            desktopFnbDropdown.addEventListener('webkitAnimationEnd', function () {
-                desktopFnbDropdown.classList.remove('close-dropdown');
-                desktopFnbDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
-            }, false);
-        });
-
-    </script>
+    <script src="assets/js/nav-dropdown.js"></script>
 </body>
 
 </html>

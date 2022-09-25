@@ -43,6 +43,14 @@ body {
     transform: translateX(0);
   }
 }
+@-webkit-keyframes header-nav-animation {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 header a {
   text-decoration: none;
   color: inherit;
@@ -197,6 +205,16 @@ header {
     width: var(--island-list-width);
   }
 }
+@-webkit-keyframes island-list-animation {
+  from {
+    opacity: 0;
+    height: var(--island-list-initial-height);
+    width: var(--island-list-initial-width);
+  } to {
+    height:  var(--island-list-height);
+    width: var(--island-list-width);
+  }
+}
 .dropdown-islands li ,
 .dropdown-islands a,
 .dropdown-fnb li ,
@@ -269,6 +287,24 @@ header {
     transform: translateY(-100px);
   }
 }
+@-webkit-keyframes dropdown-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes close-dropdown-animation {
+  from {
+    opacity: 1;
+  } to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
 .close-dropdown {
   -webkit-animation: close-dropdown-animation var(--transition-08s) ease-in-out normal;
   animation: close-dropdown-animation var(--transition-08s) ease-in-out normal;
@@ -298,6 +334,16 @@ main {
     opacity: 1;
   }
 }
+@-webkit-keyframes landing-text {
+  from {
+    transform: translateX(-2em);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .landing-page h1 {
   font-family: "Seaweed Script", cursive;
   font-size: 4em;
@@ -317,6 +363,15 @@ main {
   position: relative;
 }
 @keyframes beach-environment-animation {
+  from {
+    transform: scale(0);
+    filter: blur(8px);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes beach-environment-animation {
   from {
     transform: scale(0);
     filter: blur(8px);
@@ -425,6 +480,25 @@ main {
   }
 }
 @keyframes sea-waves-animation-residual {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes sea-waves-animation {
+  from {
+    transform: translateY(500px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes sea-waves-animation-residual {
   0% {
     opacity: 0;
   }
