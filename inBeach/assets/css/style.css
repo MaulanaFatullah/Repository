@@ -178,7 +178,7 @@ header {
 .desktop-island-dropdown,
 .desktop-fnb-dropdown
 {
-  z-index: 1;
+  z-index: 99;
   display: none;
   position: absolute;
   top: 4em;
@@ -430,7 +430,7 @@ main {
 }
 /* Surfboard */
 .beach-environment img:nth-child(6) {
-  z-index: 10;
+  z-index: 1;
   position: absolute;
   right: 140px;
   -webkit-animation: beach-environment-animation var(--transition-08s)
