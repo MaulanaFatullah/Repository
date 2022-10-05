@@ -6,10 +6,17 @@
   --base-color: #f1f1f1;
 
   --container-padding: 20px;
+
   --island-list-initial-width: 210px;
   --island-list-initial-height: 2em;
   --island-list-width: 550px;
   --island-list-height: 200px;
+
+  --fnb-list-initial-width: 210px;
+  --fnb-list-initial-height: 2em;
+  --fnb-list-width: 550px;
+  --fnb-list-height: 200px;
+
 
   --transition-04s: 0.4s;
   --transition-08s: 0.8s;
@@ -76,14 +83,6 @@ header {
 .inbeach-header {
   padding-inline-start: 2em;
 }
-#nav-desktop a:focus > span::after {
-  transition: var(--transition-04s);
-  transform: translateX(-23px) translateY(2px) rotate(45deg);
-}
-#nav-desktop a:focus > span::before {
-  transition: var(--transition-04s);
-  transform: translateY(17px) translateX(-7px) rotate(135deg);
-}
 #nav-desktop a > span::after,
 #nav-desktop a > span::before {
   transition: var(--transition-04s);
@@ -99,8 +98,6 @@ header {
 }
 #nav-desktop a > span::after {
   transform: rotate(-45deg);
-  right: 10px;
-  top: 2px;
 }
 #nav-desktop a > span::before {
   transform: rotate(45deg);
@@ -175,14 +172,27 @@ header {
   flex-grow: 1;
 }
 
-.desktop-island-dropdown,
-.desktop-fnb-dropdown
+.desktop-island-dropdown
 {
   z-index: 99;
   display: none;
   position: absolute;
   top: 4em;
   left: 43.5em;
+  color: var(--bg-main-color);
+  background-color: var(--base-color);
+  border-radius: 10px;
+  transition: var(--transition-1s);
+  -webkit-animation: dropdown-animation var(--transition-04s) ease-in-out normal;
+  animation: dropdown-animation var(--transition-04s) ease-in-out normal;
+}
+.desktop-fnb-dropdown
+{
+  z-index: 99;
+  display: none;
+  position: absolute;
+  top: 4em;
+  right: 1.5em;
   color: var(--bg-main-color);
   background-color: var(--base-color);
   border-radius: 10px;
@@ -215,6 +225,26 @@ header {
     width: var(--island-list-width);
   }
 }
+@keyframes fnb-list-animation {
+  from {
+    opacity: 0;
+    height: var(--fnb-list-initial-height);
+    width: var(--fnb-list-initial-width);
+  } to {
+    height:  var(--fnb-list-height);
+    width: var(--fnb-list-width);
+  }
+}
+@-webkit-keyframes fnb-list-animation {
+  from {
+    opacity: 0;
+    height: var(--fnb-list-initial-height);
+    width: var(--fnb-list-initial-width);
+  } to {
+    height:  var(--fnb-list-height);
+    width: var(--fnb-list-width);
+  }
+}
 .dropdown-islands li ,
 .dropdown-islands a,
 .dropdown-fnb li ,
@@ -239,34 +269,53 @@ header {
 .sumatera,
 .java,
 .bali,
-.nusatenggara,
-.restaurant,
-.cafe
+.nusatenggara
 {
   width: var(--island-list-initial-width);
   height: var(--island-list-initial-height);
   transition: all var(--transition-1s);
 }
+.restaurant,
+.cafe
+{
+  width: var(--fnb-list-initial-width);
+  height: var(--fnb-list-initial-height);
+  transition: all var(--transition-1s);
+}
 .sumatera:hover,
 .java:hover,
 .bali:hover,
-.nusatenggara:hover,
-.restaurant:hover,
-.cafe:hover
+.nusatenggara:hover
+/* .restaurant:hover,
+.cafe:hover */
 {
   height:  var(--island-list-height);
   width: var(--island-list-width);
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
 }
+.restaurant-dropdown,
+.cafe-dropdown
+{
+  height:  var(--fnb-list-height);
+  width: var(--fnb-list-width);
+  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
+}
 .sumatera:hover .sumatera-island,
 .java:hover .java-island,
 .bali:hover .bali-island,
-.nusatenggara:hover .nusa-tenggara-island,
-.restaurant:hover .restaurant-location,
-.cafe:hover .cafe-location
+.nusatenggara:hover .nusa-tenggara-island
+/* .restaurant:hover .restaurant-location,
+.cafe:hover .cafe-location */
 {
   display: flex;
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
+
+}
+.restaurant-location-dropdown,
+.cafe-location-dropdown
+{
+  display: flex;
+  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
 
 }
 @keyframes dropdown-animation {
