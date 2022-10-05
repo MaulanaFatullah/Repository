@@ -12,11 +12,10 @@
   --island-list-width: 550px;
   --island-list-height: 200px;
 
-  --fnb-list-initial-width: 210px;
+  --fnb-list-initial-width: 15em;
   --fnb-list-initial-height: 2em;
-  --fnb-list-width: 550px;
-  --fnb-list-height: 200px;
-
+  --fnb-list-width: 15em;
+  --fnb-list-height: clamp(5em, 19em, 25em);
 
   --transition-04s: 0.4s;
   --transition-08s: 0.8s;
@@ -262,9 +261,7 @@ header {
 .cafe-location
  {
   display: none;
-  position: absolute;
-  top: 15px;
-  margin-left: 220px;
+  position: relative;
 }
 .sumatera,
 .java,
@@ -286,16 +283,13 @@ header {
 .java:hover,
 .bali:hover,
 .nusatenggara:hover
-/* .restaurant:hover,
-.cafe:hover */
 {
   height:  var(--island-list-height);
   width: var(--island-list-width);
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
 }
 .restaurant-dropdown,
-.cafe-dropdown
-{
+.cafe-dropdown {
   height:  var(--fnb-list-height);
   width: var(--fnb-list-width);
   animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
@@ -304,19 +298,15 @@ header {
 .java:hover .java-island,
 .bali:hover .bali-island,
 .nusatenggara:hover .nusa-tenggara-island
-/* .restaurant:hover .restaurant-location,
-.cafe:hover .cafe-location */
 {
   display: flex;
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
-
 }
 .restaurant-location-dropdown,
 .cafe-location-dropdown
 {
   display: flex;
   animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
-
 }
 @keyframes dropdown-animation {
   from {
