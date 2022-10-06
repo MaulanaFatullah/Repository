@@ -13,7 +13,6 @@ const styleEl = document.createElement('style');
 document.head.appendChild(styleEl);
 const styleSheet = styleEl.sheet;
 
-
 main.addEventListener('click', function () {
     if (desktopFnbDropdown.style.display == 'flex') {
         desktopFnbDropdown.classList.add('close-dropdown');
@@ -41,7 +40,6 @@ main.addEventListener('click', function () {
 });
 
 subFnb.addEventListener('click', function () {
-
     desktopFnbDropdown.style.display = 'flex';
     if (desktopIslandDropdown.style.display == 'flex') {
         if (styleEl.sheet.cssRules.length > 1) {
@@ -55,7 +53,7 @@ subFnb.addEventListener('click', function () {
             desktopIslandDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
         }, false);
     }
-    
+
     if (styleEl.sheet.cssRules.length == 0) {
         styleSheet.insertRule('#nav-desktop a[href="#fnb"] > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
         styleSheet.insertRule('#nav-desktop a[href="#fnb"] > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
@@ -63,7 +61,6 @@ subFnb.addEventListener('click', function () {
 });
 
 subIsland.addEventListener('click', () => {
-
     desktopIslandDropdown.style.display = 'flex';
     if (desktopFnbDropdown.style.display == 'flex') {
         if (styleEl.sheet.cssRules.length > 1) {
@@ -79,24 +76,43 @@ subIsland.addEventListener('click', () => {
     }
     restaurantLocation.classList.remove('restaurant-location-dropdown');
     restaurant.classList.remove('restaurant-dropdown');
-    
+
     if (styleEl.sheet.cssRules.length == 0) {
         styleSheet.insertRule('#nav-desktop a[href="#islands"] > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
         styleSheet.insertRule('#nav-desktop a[href="#islands"] > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
     }
 });
 
-restaurant.addEventListener('click', function () {
-    restaurantLocation.classList.add('restaurant-location-dropdown');
-    restaurant.classList.add('restaurant-dropdown');
+// restaurant.addEventListener('click', function () {
+//     restaurantLocation.classList.add('restaurant-location-dropdown');
+//     restaurant.classList.add('restaurant-dropdown');
 
-    cafeLocation.classList.remove('cafe-location-dropdown');
-    cafe.classList.remove('cafe-dropdown');
-});
-cafe.addEventListener('click', function () {
-    cafeLocation.classList.add('cafe-location-dropdown');
-    cafe.classList.add('cafe-dropdown');
+//     cafeLocation.classList.remove('cafe-location-dropdown');
+//     cafe.classList.remove('cafe-dropdown');
+// });
+// cafe.addEventListener('click', function () {
+//     cafeLocation.classList.add('cafe-location-dropdown');
+//     cafe.classList.add('cafe-dropdown');
 
-    restaurantLocation.classList.remove('restaurant-location-dropdown');
-    restaurant.classList.remove('restaurant-dropdown');
+//     restaurantLocation.classList.remove('restaurant-location-dropdown');
+//     restaurant.classList.remove('restaurant-dropdown');
+// });
+
+window.addEventListener('load', function () {
+    const dropdownList = document.querySelectorAll('.dropdown-list>ul>li');
+    const dropdownSubList = document.querySelectorAll('.dropdown-list>ul>li>div');
+
+    for (let a of dropdownList) {
+        a.id = 'number-';
+        a.addEventListener('click', function () {
+            for (const b of dropdownSubList) {
+                b.classList.add('dropdown-animation-list');
+                a.classList.add('dropdown-list-size');
+                console.log(a);
+            }
+        });
+    }
+    for (let index = 0; index < dropdownList.length; index++) {
+        document.getElementById('number-').id = 'number-' + index;
+    }
 });

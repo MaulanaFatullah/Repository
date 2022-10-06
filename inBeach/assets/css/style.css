@@ -288,12 +288,17 @@ header {
   width: var(--island-list-width);
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
 }
-.restaurant-dropdown,
-.cafe-dropdown {
+.dropdown-list-size {
   height:  var(--fnb-list-height);
   width: var(--fnb-list-width);
   animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
 }
+/* .restaurant-dropdown,
+.cafe-dropdown {
+  height:  var(--fnb-list-height);
+  width: var(--fnb-list-width);
+  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
+} */
 .sumatera:hover .sumatera-island,
 .java:hover .java-island,
 .bali:hover .bali-island,
@@ -302,12 +307,17 @@ header {
   display: flex;
   animation: island-list-animation var(--transition-1s) ease-in-out normal;
 }
-.restaurant-location-dropdown,
-.cafe-location-dropdown
+.dropdown-animation-list
 {
   display: flex;
   animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
 }
+/* .restaurant-location-dropdown,
+.cafe-location-dropdown
+{
+  display: flex;
+  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
+} */
 @keyframes dropdown-animation {
   from {
     opacity: 0;
