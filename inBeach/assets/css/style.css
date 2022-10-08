@@ -8,14 +8,11 @@
   --container-padding: 20px;
 
   --island-list-initial-width: 210px;
-  --island-list-initial-height: 2em;
-  --island-list-width: 550px;
-  --island-list-height: 200px;
-
   --fnb-list-initial-width: 15em;
-  --fnb-list-initial-height: 2em;
-  --fnb-list-width: 15em;
-  --fnb-list-height: clamp(5em, 19em, 25em);
+  --dropdown-list-initial-height: 2em;
+
+  --dropdown-list-width: 15em;
+  --dropdown-list-height: 0em;
 
   --transition-04s: 0.4s;
   --transition-08s: 0.8s;
@@ -204,46 +201,6 @@ header {
 {
   font-family: "Karla", sans-serif;
 }
-@keyframes island-list-animation {
-  from {
-    opacity: 0;
-    height: var(--island-list-initial-height);
-    width: var(--island-list-initial-width);
-  } to {
-    height:  var(--island-list-height);
-    width: var(--island-list-width);
-  }
-}
-@-webkit-keyframes island-list-animation {
-  from {
-    opacity: 0;
-    height: var(--island-list-initial-height);
-    width: var(--island-list-initial-width);
-  } to {
-    height:  var(--island-list-height);
-    width: var(--island-list-width);
-  }
-}
-@keyframes fnb-list-animation {
-  from {
-    opacity: 0;
-    height: var(--fnb-list-initial-height);
-    width: var(--fnb-list-initial-width);
-  } to {
-    height:  var(--fnb-list-height);
-    width: var(--fnb-list-width);
-  }
-}
-@-webkit-keyframes fnb-list-animation {
-  from {
-    opacity: 0;
-    height: var(--fnb-list-initial-height);
-    width: var(--fnb-list-initial-width);
-  } to {
-    height:  var(--fnb-list-height);
-    width: var(--fnb-list-width);
-  }
-}
 .dropdown-islands li ,
 .dropdown-islands a,
 .dropdown-fnb li ,
@@ -269,55 +226,37 @@ header {
 .nusatenggara
 {
   width: var(--island-list-initial-width);
-  height: var(--island-list-initial-height);
+  height: var(--dropdown-list-initial-height);
   transition: all var(--transition-1s);
 }
 .restaurant,
 .cafe
 {
   width: var(--fnb-list-initial-width);
-  height: var(--fnb-list-initial-height);
+  height: var(--dropdown-list-initial-height);
   transition: all var(--transition-1s);
 }
-/* .sumatera:hover,
-.java:hover,
-.bali:hover,
-.nusatenggara:hover
-{
-  height:  var(--island-list-height);
-  width: var(--island-list-width);
-  animation: island-list-animation var(--transition-1s) ease-in-out normal;
-} */
-.dropdown-list-size {
-  height:  var(--fnb-list-height);
-  width: var(--fnb-list-width);
-  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
+
+@keyframes dropdown-keyframe-animation {
+  from {
+    opacity: 0;
+    height: var(--dropdown-list-initial-height);
+    width: var(--fnb-list-initial-width);
+  } to {
+    height: var(--dropdown-list-height);
+    width: var(--dropdown-list-width);
+  }
 }
-/* .restaurant-dropdown,
-.cafe-dropdown {
-  height:  var(--fnb-list-height);
-  width: var(--fnb-list-width);
-  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
-} */
-/* .sumatera:hover .sumatera-island,
-.java:hover .java-island,
-.bali:hover .bali-island,
-.nusatenggara:hover .nusa-tenggara-island
-{
-  display: flex;
-  animation: island-list-animation var(--transition-1s) ease-in-out normal;
-} */
+.dropdown-list-size {
+  height: var(--dropdown-list-height);
+  width: var(--dropdown-list-width);
+  animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out normal;
+}
 .dropdown-animation-list
 {
   display: flex;
-  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
+  animation: dropdown-keyframe-animation var(--transition-8s) ease-in-out normal;
 }
-/* .restaurant-location-dropdown,
-.cafe-location-dropdown
-{
-  display: flex;
-  animation: fnb-list-animation var(--transition-1s) ease-in-out normal;
-} */
 @keyframes dropdown-animation {
   from {
     opacity: 0;

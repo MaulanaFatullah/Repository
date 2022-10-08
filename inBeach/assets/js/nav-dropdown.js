@@ -24,24 +24,33 @@ window.addEventListener('load', function () {
         b.id = 'sublist-number-';
     }
 
-    for (let index = 0; index < dropdownList.length; index++) {
+    for (let index = 1; index < dropdownList.length + 1; index++) {
         document.getElementById('dropdown-number-').id = 'dropdown-number-' + index;
         document.getElementById('sublist-number-').id = 'sublist-number-' + index;
     }
-    for (let index = 0; index < dropdownList.length; index++) {
-        // document.getElementById('dropdown-number-').id = 'dropdown-number-' + index;
+    for (let index = 1; index < dropdownList.length + 1; index++) {
+        const dropdownListSize = document.querySelector('.dropdown-list-size');
+        // document.querySelector('.dropdown-list-size').style.height = '5em'
+        const sublistLength = document.querySelectorAll('#sublist-number-' + index + '>ul>li').length
+
         const id = document.getElementById('dropdown-number-' + index);
+        const x = document.getElementById('dropdown-number-' + (index + 1));
         id.addEventListener('click', function () {
-            // a.classList.add('dropdown-list-size');
-            // b.classList.add('dropdown-animation-list');
-            // console.log(a);
             if (document.getElementById('dropdown-number-' + index).classList.contains('dropdown-list-size') || document.getElementById('sublist-number-' + index).classList.contains('dropdown-animation-list')) {
                 document.getElementById('dropdown-number-' + index).classList.remove('dropdown-list-size');
                 document.getElementById('sublist-number-' + index).classList.remove('dropdown-animation-list');
             } else {
                 document.getElementById('dropdown-number-' + index).classList.add('dropdown-list-size');
                 document.getElementById('sublist-number-' + index).classList.add('dropdown-animation-list');
+                if (sublistLength == sublistLength) {
+                    const b = sublistLength * 2;
+                    document.documentElement.style.setProperty('--dropdown-list-height', b + 'em');
+                }
             }
+                document.getElementById('dropdown-number-' + (index - 1)).classList.remove('dropdown-list-size');
+                document.getElementById('sublist-number-' + (index - 1)).classList.remove('dropdown-animation-list');
+                document.getElementById('dropdown-number-' + (index + 1)).classList.remove('dropdown-list-size');
+                document.getElementById('sublist-number-' + (index + 1)).classList.remove('dropdown-animation-list');
         });
     }
 });
