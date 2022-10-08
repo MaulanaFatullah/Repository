@@ -13,6 +13,39 @@ const styleEl = document.createElement('style');
 document.head.appendChild(styleEl);
 const styleSheet = styleEl.sheet;
 
+window.addEventListener('load', function () {
+    const dropdownList = document.querySelectorAll('.dropdown-list>ul>li');
+    const dropdownSubList = document.querySelectorAll('.dropdown-list>ul>li>div');
+
+    for (let a of dropdownList) {
+        a.id = 'dropdown-number-';
+    }
+    for (const b of dropdownSubList) {
+        b.id = 'sublist-number-';
+    }
+
+    for (let index = 0; index < dropdownList.length; index++) {
+        document.getElementById('dropdown-number-').id = 'dropdown-number-' + index;
+        document.getElementById('sublist-number-').id = 'sublist-number-' + index;
+    }
+    for (let index = 0; index < dropdownList.length; index++) {
+        // document.getElementById('dropdown-number-').id = 'dropdown-number-' + index;
+        const id = document.getElementById('dropdown-number-' + index);
+        id.addEventListener('click', function () {
+            // a.classList.add('dropdown-list-size');
+            // b.classList.add('dropdown-animation-list');
+            // console.log(a);
+            if (document.getElementById('dropdown-number-' + index).classList.contains('dropdown-list-size') || document.getElementById('sublist-number-' + index).classList.contains('dropdown-animation-list')) {
+                document.getElementById('dropdown-number-' + index).classList.remove('dropdown-list-size');
+                document.getElementById('sublist-number-' + index).classList.remove('dropdown-animation-list');
+            } else {
+                document.getElementById('dropdown-number-' + index).classList.add('dropdown-list-size');
+                document.getElementById('sublist-number-' + index).classList.add('dropdown-animation-list');
+            }
+        });
+    }
+});
+
 main.addEventListener('click', function () {
     if (desktopFnbDropdown.style.display == 'flex') {
         desktopFnbDropdown.classList.add('close-dropdown');
@@ -97,22 +130,3 @@ subIsland.addEventListener('click', () => {
 //     restaurantLocation.classList.remove('restaurant-location-dropdown');
 //     restaurant.classList.remove('restaurant-dropdown');
 // });
-
-window.addEventListener('load', function () {
-    const dropdownList = document.querySelectorAll('.dropdown-list>ul>li');
-    const dropdownSubList = document.querySelectorAll('.dropdown-list>ul>li>div');
-
-    for (let a of dropdownList) {
-        a.id = 'number-';
-        a.addEventListener('click', function () {
-            for (const b of dropdownSubList) {
-                b.classList.add('dropdown-animation-list');
-                a.classList.add('dropdown-list-size');
-                console.log(a);
-            }
-        });
-    }
-    for (let index = 0; index < dropdownList.length; index++) {
-        document.getElementById('number-').id = 'number-' + index;
-    }
-});
