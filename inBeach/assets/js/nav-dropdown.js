@@ -12,8 +12,14 @@ const cafeLocation = document.querySelector('.cafe-location');
 const styleEl = document.createElement('style');
 document.head.appendChild(styleEl);
 const styleSheet = styleEl.sheet;
+const dropdownKey = 'DROPDOWN_KEY';
+const sublistKey = 'SUBLIST_KEY';
 
 window.addEventListener('load', function () {
+    if (sessionStorage.getItem(dropdownKey) === null && sessionStorage.getItem(sublistKey) === null) {
+        sessionStorage.setItem(dropdownKey, '');
+        sessionStorage.setItem(sublistKey, '');
+    }
     const dropdownList = document.querySelectorAll('.dropdown-list>ul>li');
     const dropdownSubList = document.querySelectorAll('.dropdown-list>ul>li>div');
 
@@ -37,20 +43,28 @@ window.addEventListener('load', function () {
         const x = document.getElementById('dropdown-number-' + (index + 1));
         id.addEventListener('click', function () {
             if (document.getElementById('dropdown-number-' + index).classList.contains('dropdown-list-size') || document.getElementById('sublist-number-' + index).classList.contains('dropdown-animation-list')) {
-                document.getElementById('dropdown-number-' + index).classList.remove('dropdown-list-size');
-                document.getElementById('sublist-number-' + index).classList.remove('dropdown-animation-list');
+                document.querySelector('.dropdown-list>ul>li[class~="dropdown-list-size"]').classList.remove('dropdown-list-size');
+                document.querySelector('.dropdown-list>ul>li>div[class~="dropdown-animation-list"]').classList.remove('dropdown-animation-list');
             } else {
-                document.getElementById('dropdown-number-' + index).classList.add('dropdown-list-size');
-                document.getElementById('sublist-number-' + index).classList.add('dropdown-animation-list');
-                if (sublistLength == sublistLength) {
-                    const b = sublistLength * 2;
-                    document.documentElement.style.setProperty('--dropdown-list-height', b + 'em');
+                if (sessionStorage.getItem(dropdownKey) === '') {
+                    sessionStorage.setItem(dropdownKey, 'dropdown-number-' + index);
+                    sessionStorage.setItem(sublistKey, 'sublist-number-' + index);
+                } else {
+                    document.getElementById(sessionStorage.getItem(dropdownKey)).classList.remove('dropdown-list-size');
+                    document.getElementById(sessionStorage.getItem(sublistKey)).classList.remove('dropdown-animation-list');
+                    sessionStorage.setItem(dropdownKey, 'dropdown-number-' + index);
+                    sessionStorage.setItem(sublistKey, 'sublist-number-' + index);
+                }
+                if (!document.getElementById('dropdown-number-' + index).classList.contains('dropdown-list-size') || !document.getElementById('sublist-number-' + index).classList.contains('dropdown-animation-list')) {
+                    document.getElementById('dropdown-number-' + index).classList.add('dropdown-list-size');
+                    document.getElementById('sublist-number-' + index).classList.add('dropdown-animation-list');
+                    if (sublistLength == sublistLength) {
+                        const b = (sublistLength * 2) + 0.5;
+                        document.documentElement.style.setProperty('--dropdown-list-height', b + 'em');
+                    }
                 }
             }
-                document.getElementById('dropdown-number-' + (index - 1)).classList.remove('dropdown-list-size');
-                document.getElementById('sublist-number-' + (index - 1)).classList.remove('dropdown-animation-list');
-                document.getElementById('dropdown-number-' + (index + 1)).classList.remove('dropdown-list-size');
-                document.getElementById('sublist-number-' + (index + 1)).classList.remove('dropdown-animation-list');
+
         });
     }
 });
@@ -76,6 +90,8 @@ main.addEventListener('click', function () {
     restaurant.classList.remove('restaurant-dropdown');
     cafeLocation.classList.remove('cafe-location-dropdown');
     cafe.classList.remove('cafe-dropdown');
+    document.querySelector('.dropdown-list>ul>li[class~="dropdown-list-size"]').classList.remove('dropdown-list-size');
+    document.querySelector('.dropdown-list>ul>li>div[class~="dropdown-animation-list"]').classList.remove('dropdown-animation-list');
 
     styleSheet.deleteRule(0);
     styleSheet.deleteRule(0);

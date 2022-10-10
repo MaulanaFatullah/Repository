@@ -8,10 +8,10 @@
   --container-padding: 20px;
 
   --island-list-initial-width: 210px;
-  --fnb-list-initial-width: 15em;
+  --fnb-list-initial-width: 9em;
   --dropdown-list-initial-height: 2em;
 
-  --dropdown-list-width: 15em;
+  --dropdown-list-width: 18em;
   --dropdown-list-height: 0em;
 
   --transition-04s: 0.4s;
@@ -227,14 +227,14 @@ header {
 {
   width: var(--island-list-initial-width);
   height: var(--dropdown-list-initial-height);
-  transition: all var(--transition-1s);
+  transition: all var(--transition-08s);
 }
 .restaurant,
 .cafe
 {
   width: var(--fnb-list-initial-width);
   height: var(--dropdown-list-initial-height);
-  transition: all var(--transition-1s);
+  transition: all var(--transition-08s);
 }
 
 @keyframes dropdown-keyframe-animation {
@@ -255,7 +255,7 @@ header {
 .dropdown-animation-list
 {
   display: flex;
-  animation: dropdown-keyframe-animation var(--transition-8s) ease-in-out normal;
+  animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out normal;
 }
 @keyframes dropdown-animation {
   from {
