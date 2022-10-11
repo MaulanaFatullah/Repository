@@ -14,14 +14,14 @@ const styleSheet = styleEl.sheet;
 const dropdownKey = 'DROPDOWN_KEY';
 const sublistKey = 'SUBLIST_KEY';
 
+const dropdownList = document.querySelectorAll('.dropdown-list>ul>li');
+const dropdownSubList = document.querySelectorAll('.dropdown-list>ul>li>div');
+
 window.addEventListener('load', function () {
     if (sessionStorage.getItem(dropdownKey) === null && sessionStorage.getItem(sublistKey) === null) {
         sessionStorage.setItem(dropdownKey, '');
         sessionStorage.setItem(sublistKey, '');
     }
-    const dropdownList = document.querySelectorAll('.dropdown-list>ul>li');
-    const dropdownSubList = document.querySelectorAll('.dropdown-list>ul>li>div');
-
     for (let a of dropdownList) {
         a.id = 'dropdown-number-';
     }
@@ -29,11 +29,11 @@ window.addEventListener('load', function () {
         b.id = 'sublist-number-';
     }
 
-    for (let index = 1; index < dropdownList.length + 1; index++) {
+    for (let index = 1; index <= dropdownList.length; index++) {
         document.getElementById('dropdown-number-').id = 'dropdown-number-' + index;
         document.getElementById('sublist-number-').id = 'sublist-number-' + index;
     }
-    for (let index = 1; index < dropdownList.length + 1; index++) {
+    for (let index = 1; index <= dropdownList.length; index++) {
         const dropdownListSize = document.querySelector('.dropdown-list-size');
         // document.querySelector('.dropdown-list-size').style.height = '5em'
         const sublistLength = document.querySelectorAll('#sublist-number-' + index + '>ul>li').length
@@ -138,9 +138,17 @@ subIsland.addEventListener('click', () => {
         styleSheet.insertRule('#nav-desktop a[href="#islands"] > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
     }
 });
+
+// Nav Mobile
 btnNavMobile.addEventListener('click', function () {
     navMobile.classList.add('active');
 });
 btnCloseNavMobile.addEventListener('click', function () {
     navMobile.classList.remove('active');
+});
+
+
+document.querySelector('#nav-mobile div.sub-island a').addEventListener('click', function () {
+    document.querySelector('#nav-mobile ul.sub-island').classList.toggle('active');
+    // document.querySelector('#nav-mobile ul.sub-fnb').classList.toggle('active');
 });

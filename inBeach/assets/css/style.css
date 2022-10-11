@@ -81,8 +81,6 @@ header {
   /* background-color: red; */
   width: 100%;
   height: 10vh;
-  -webkit-animation: header-nav-animation var(--transition-1s) var(--popup-animation) normal;
-  animation: header-nav-animation var(--transition-1s) var(--popup-animation) normal;
 }
 
 .container {
@@ -186,6 +184,8 @@ header {
   font-weight: 600;
   font-size: 1.5em;
   flex-grow: 1;
+  -webkit-animation: header-nav-animation var(--transition-1s) var(--popup-animation) normal;
+  animation: header-nav-animation var(--transition-1s) var(--popup-animation) normal;
 }
 
 .desktop-island-dropdown {
@@ -238,7 +238,6 @@ header {
 .restaurant-location,
 .cafe-location {
   display: none;
-  position: relative;
 }
 
 .sumatera,
@@ -354,6 +353,9 @@ header {
   right: 4em;
 }
 
+.hamburger-menu:hover>span {
+  background-color: var(--bg-second-color);
+}
 .hamburger-menu>span {
   display: none;
   content: '';
@@ -362,6 +364,7 @@ header {
   margin-top: .5em;
   background-color: var(--base-color);
   border-radius: 100px;
+  transition: all var(--transition-1s);
 }
 
 #nav-mobile {
@@ -372,21 +375,25 @@ header {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 30vw;
+  width: 40vw;
   background-color: var(--base-color);
   transform: translateX(100%);
   transition: all var(--transition-04s);
 }
 
 #nav-mobile.active {
+  overflow: auto;
   transform: translateX(0%);
 }
 
+#nav-mobile .close-btn:hover span{
+  background-color: var(--bg-second-color);
+}
 #nav-mobile .close-btn {
   display: block;
   cursor: pointer;
   position: inherit;
-  padding: .5em;
+  padding: 1.5em 2.5em 1.5em .5em;
   top: 3em;
   right: 6em;
 }
@@ -398,6 +405,7 @@ header {
   width: 2em;
   height: 5.5px;
   border-radius: 100px;
+  transition: all var(--transition-08s);
   background-color: var(--bg-main-color);
 }
 
@@ -415,6 +423,7 @@ header {
 }
 
 #nav-mobile ul > li {
+  height: auto;
   text-align: center;
   width: 100%;
   display: inline-block;
@@ -430,14 +439,47 @@ header {
 #nav-mobile ul li a:hover {
   color: var(--bg-second-color);
 }
-#nav-mobile .sub-island {
-  display: none;
-  opacity: 0;
-  transition: all var(--transition-04s);
+#nav-mobile div.sub-island > a,
+#nav-mobile div.sub-fnb > a
+{
+  padding: 10px;
+  border-bottom: 2px solid var(--bg-main-color);
 }
-#nav-mobile .sub-island.active {
+#nav-mobile ul.sub-island li div,
+#nav-mobile ul.sub-island li,
+#nav-mobile ul.sub-island,
+#nav-mobile ul.sub-fnb li div,
+#nav-mobile ul.sub-fnb li,
+#nav-mobile ul.sub-fnb 
+{
+  transition: none;
+  animation: none;
+}
+#nav-mobile ul.sub-island li div ul,
+#nav-mobile ul.sub-fnb li div ul
+{
+  font-size: .8em;
+}
+#nav-mobile ul.sub-island li ul,
+#nav-mobile ul.sub-fnb li ul
+{
+  border-right: 2px solid var(--bg-main-color);
+  border-left: 2px solid var(--bg-main-color);
+}
+#nav-mobile ul.sub-island,
+#nav-mobile ul.sub-fnb
+{
+  display: none;
+  transition: all var(--transition-04s);
+  color: var(--bg-main-color);
+}
+#nav-mobile ul.sub-island.active,
+#nav-mobile ul.sub-fnb.active
+{
   display: block;
-  opacity: 1;
+  margin-top: 1em;
+  padding-top: 1em;
+  border-bottom: 2px solid var(--bg-main-color);
 }
 main {
   width: 100%;
@@ -811,5 +853,13 @@ main {
 
     .hamburger-menu span {
       display: block;
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    #nav-mobile {
+      width: 70vw;
+    }
+    #nav-mobile.active {
+      box-shadow: -40vmax 0 rgba(0, 0, 0, 0.5);
     }
   }
