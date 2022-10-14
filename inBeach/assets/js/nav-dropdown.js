@@ -147,8 +147,9 @@ btnCloseNavMobile.addEventListener('click', function () {
     navMobile.classList.remove('active');
 });
 
-
 document.querySelector('#nav-mobile div.sub-island a').addEventListener('click', function () {
     document.querySelector('#nav-mobile ul.sub-island').classList.toggle('active');
-    // document.querySelector('#nav-mobile ul.sub-fnb').classList.toggle('active');
+});
+document.querySelector('#nav-mobile div.sub-fnb a').addEventListener('click', function () {
+    document.querySelector('#nav-mobile ul.sub-fnb').classList.toggle('active');
 });

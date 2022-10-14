@@ -1,0 +1,491 @@
+/* media query max-width */
+@media screen and (max-width: 1830px) {
+  .desktop-island-dropdown {
+    left: calc(var(--desktop-island-dropdown-left-pos) - 3vw);
+  }
+}
+
+@media screen and (max-width: 1640px) {
+  .desktop-island-dropdown {
+    left: calc(var(--desktop-island-dropdown-left-pos) - 6vw);
+  }
+
+  .beach-environment img {
+    transform: translateY(5em);
+  }
+  .beach-environment img:nth-child(1) {
+    width: calc(var(--beach-environment-img-1-width) - 1.5em);
+  }
+
+  .beach-environment img:nth-child(2) {
+    width: calc(var(--beach-environment-img-2-width) - 1.5em);
+  }
+
+  .beach-environment img:nth-child(3) {
+    width: calc(var(--beach-environment-img-3-width) - 1.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    width: calc(var(--beach-environment-img-4-width) - 1.5em);
+  }
+
+  .beach-environment img:nth-child(5) {
+    width: calc(var(--beach-environment-img-5-width) - 1.5em);
+  }
+
+  .beach-environment img:nth-child(6) {
+    width: calc(var(--beach-environment-img-6-width) - 1.5em);
+  }
+
+  .beach-environment img:nth-child(7) {
+    width: calc(var(--beach-environment-img-7-width) - 1.5em);
+  }
+
+  .beach-environment img:nth-child(8) {
+    width: calc(var(--beach-environment-img-8-width) - 1.5em);
+  }
+}
+
+@media screen and (max-width: 1530px) {
+  .desktop-island-dropdown {
+    left: calc(var(--desktop-island-dropdown-left-pos) - 12vw);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .desktop-island-dropdown {
+    left: calc(var(--desktop-island-dropdown-left-pos) - 18vw);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .beach-environment img:nth-child(3) {
+    width: calc(var(--beach-environment-img-3-width) - 2.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    width: calc(var(--beach-environment-img-4-width) - 2.5em);
+  }
+
+  .beach-environment img:nth-child(6) {
+    width: calc(var(--beach-environment-img-6-width) - 2.5em);
+  }
+
+  .beach-environment img:nth-child(7) {
+    width: calc(var(--beach-environment-img-7-width) - 2.5em);
+  }
+
+  .beach-environment img:nth-child(8) {
+    width: calc(var(--beach-environment-img-8-width) - 2.5em);
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  #nav-desktop {
+    display: none;
+  }
+
+  .hamburger-menu span {
+    display: block;
+  }
+}
+@media screen and (max-width: 1080px) {
+  #nav-mobile {
+    width: 70vw;
+  }
+  #nav-mobile.active {
+    box-shadow: -40vmax 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .beach-environment img:nth-child(1) {
+    width: calc(var(--beach-environment-img-1-width) - 1.8em);
+  }
+
+  .beach-environment img:nth-child(2) {
+    top: 8em;
+    width: calc(var(--beach-environment-img-2-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(3) {
+    top: 2em;
+    width: calc(var(--beach-environment-img-3-width) - 3.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    width: calc(var(--beach-environment-img-4-width) - 3.5em);
+  }
+
+  .beach-environment img:nth-child(5) {
+    left: -5em;
+    top: 5em;
+    width: calc(var(--beach-environment-img-5-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(6) {
+    width: calc(var(--beach-environment-img-6-width) - 3.5em);
+  }
+
+  .beach-environment img:nth-child(7) {
+    width: calc(var(--beach-environment-img-7-width) - 3.5em);
+  }
+
+  .beach-environment img:nth-child(8) {
+    width: calc(var(--beach-environment-img-8-width) - 3.5em);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .beach-environment img:nth-child(1) {
+    width: calc(var(--beach-environment-img-1-width) - 1.8em);
+  }
+
+  .beach-environment img:nth-child(2) {
+    top: 15em;
+    width: calc(var(--beach-environment-img-2-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(3) {
+    top: 4em;
+    width: calc(var(--beach-environment-img-3-width) - 6.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    width: calc(var(--beach-environment-img-4-width) - 6.5em);
+  }
+
+  .beach-environment img:nth-child(5) {
+    top: 15em;
+    width: calc(var(--beach-environment-img-5-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(6) {
+    right: 5.5em;
+    width: calc(var(--beach-environment-img-6-width) - 5.5em);
+  }
+
+  .beach-environment img:nth-child(7) {
+    width: calc(var(--beach-environment-img-7-width) - 5.5em);
+  }
+
+  .beach-environment img:nth-child(8) {
+    width: calc(var(--beach-environment-img-8-width) - 5.5em);
+  }
+}
+@media screen and (max-width: 720px) {
+  #nav-mobile {
+    width: 100vw;
+  }
+  .beach-environment img:nth-child(1) {
+    left: 1em;
+    width: calc(var(--beach-environment-img-1-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(2) {
+    left: 2em;
+    top: 20em;
+    width: calc(var(--beach-environment-img-2-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(3) {
+    left: -5em;
+    width: calc(var(--beach-environment-img-3-width) - 8.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    left: -12em;
+    width: calc(var(--beach-environment-img-4-width) - 8em);
+  }
+
+  .beach-environment img:nth-child(5) {
+    top: 22em;
+    width: calc(var(--beach-environment-img-5-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(6) {
+    top: 17em;
+    right: 5.5em;
+    width: calc(var(--beach-environment-img-6-width) - 5.5em);
+  }
+
+  .beach-environment img:nth-child(7) {
+    top: 17em;
+
+    width: calc(var(--beach-environment-img-7-width) - 8.5em);
+  }
+
+  .beach-environment img:nth-child(8) {
+    bottom: 10em;
+
+    width: calc(var(--beach-environment-img-8-width) - 5.5em);
+  }
+}
+@media screen and (max-width: 630px) {
+  .hamburger-menu {
+    right: 2em;
+  }
+  .inbeach-header {
+    padding-inline-start: 1em;
+  }
+  #nav-mobile {
+    width: 100vw;
+  }
+  .beach-environment img:nth-child(1) {
+    top: 1em;
+    width: calc(var(--beach-environment-img-1-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(2) {
+    left: -2em;
+    top: 22em;
+    width: calc(var(--beach-environment-img-2-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(3) {
+    left: -10em;
+    top: 10em;
+    width: calc(var(--beach-environment-img-3-width) - 8.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    left: -15em;
+    top: 10em;
+    width: calc(var(--beach-environment-img-4-width) - 8em);
+  }
+
+  .beach-environment img:nth-child(5) {
+    left: 20em;
+    top: 18em;
+    width: calc(var(--beach-environment-img-5-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(6) {
+    top: 10em;
+    right: 7em;
+    width: calc(var(--beach-environment-img-6-width) - 6.5em);
+  }
+
+  .beach-environment img:nth-child(7) {
+    top: 10em;
+    right: 0.5em;
+
+    width: calc(var(--beach-environment-img-7-width) - 10.5em);
+  }
+
+  .beach-environment img:nth-child(8) {
+    bottom: 10em;
+
+    width: calc(var(--beach-environment-img-8-width) - 5.5em);
+  }
+
+  .sea-waves img:nth-child(1) {
+    bottom: 5em;
+  }
+
+  .sea-waves img:nth-child(2) {
+    bottom: 3em;
+  }
+}
+@media screen and (max-width: 560px) {
+  #nav-mobile {
+    width: 100vw;
+  }
+  .beach-environment img:nth-child(1) {
+    width: calc(var(--beach-environment-img-1-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(2) {
+    width: calc(var(--beach-environment-img-2-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(3) {
+    left: -5em;
+    top: 10em;
+    width: calc(var(--beach-environment-img-3-width) - 8.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    left: 10em;
+    top: 0em;
+    width: calc(var(--beach-environment-img-4-width) - 8em);
+  }
+
+  .beach-environment img:nth-child(5) {
+    left: 5em;
+    top: 13em;
+    width: calc(var(--beach-environment-img-5-width) - 2em);
+  }
+
+  .beach-environment img:nth-child(6) {
+    display: none;
+  }
+
+  .beach-environment img:nth-child(7) {
+    display: none;
+  }
+
+  .beach-environment img:nth-child(8) {
+    bottom: 10em;
+
+    width: calc(var(--beach-environment-img-8-width) - 5.5em);
+  }
+
+  .sea-waves img:nth-child(1) {
+    bottom: 4em;
+  }
+
+  .sea-waves img:nth-child(2) {
+    bottom: 2em;
+  }
+  .sea-waves img:nth-child(3) {
+    bottom: -1em;
+  }
+  .sea-waves img:nth-child(5) {
+    bottom: -2em;
+  }
+  .landing-page h1 {
+    padding-inline: 1em;
+  }
+}
+@media screen and (max-width: 420px) {
+  .landing-page h1 {
+    font-size: 1.5em;
+  }
+  .beach-environment img:nth-child(1) {
+    left: 1em;
+  }
+  .beach-environment img:nth-child(3) {
+    top: 1em;
+    left: 1em;
+    width: calc(var(--beach-environment-img-3-width) - 10.5em);
+  }
+  .beach-environment img:nth-child(4) {
+    top: 2em;
+    width: calc(var(--beach-environment-img-4-width) - 7.5em);
+  }
+  .beach-environment img:nth-child(8) {
+    display: none;
+  }
+  .sea-waves img:nth-child(1) {
+    bottom: 3em;
+  }
+
+  .sea-waves img:nth-child(2) {
+    bottom: 1.5em;
+  }
+
+  .sea-waves img:nth-child(4) {
+    bottom: 0em;
+  }
+}
+@media screen and (max-width: 380px) {
+  .beach-environment img:nth-child(1) {
+    left: 10em;
+  }
+}
+/* media query max-height */
+@media screen and (max-height: 900px) {
+  .landing-page h1 {
+    font-size: clamp(max(1em, 1.5em), calc(5vh + 10%), 1.8em);
+  }
+  .beach-environment img:nth-child(6) {
+    display: none;
+  }
+  .beach-environment img:nth-child(7) {
+    display: none;
+  }
+}
+@media screen and (max-height: 720px) {
+  .beach-environment img:nth-child(1) {
+    top: 3em;
+    left: 1em;
+    width: calc(var(--beach-environment-img-1-width) - 2.5em);
+  }
+
+  .beach-environment img:nth-child(2) {
+    display: none;
+  }
+
+  .beach-environment img:nth-child(3) {
+    left: 14em;
+    top: -0.5em;
+    width: calc(var(--beach-environment-img-3-width) - 10.5em);
+  }
+
+  .beach-environment img:nth-child(4) {
+    top: 4em;
+    left: 5em;
+    width: calc(var(--beach-environment-img-4-width) - 6.5em);
+  }
+
+  .beach-environment img:nth-child(5) {
+    display: none;
+  }
+
+  .beach-environment img:nth-child(6) {
+    display: none;
+  }
+
+  .beach-environment img:nth-child(7) {
+    right: 2em;
+    width: calc(var(--beach-environment-img-7-width) - 10.5em);
+  }
+
+  .beach-environment img:nth-child(8) {
+    display: none;
+  }
+}
+@media screen and (max-height: 600px) {
+  .landing-page h1 {
+    top: 100px;
+  }
+
+  .beach-environment img:nth-child(1) {
+    display: none;
+  }
+  .beach-environment img:nth-child(2) {
+    top: 5em;
+    display: block;
+  }
+  .beach-environment img:nth-child(3) {
+    display: none;
+  }
+  .beach-environment img:nth-child(4) {
+    display: none;
+  }
+  .beach-environment img:nth-child(7) {
+    bottom: 10em;
+  }
+
+  .sea-waves img:nth-child(1) {
+    display: none;
+  }
+
+  .sea-waves img:nth-child(2) {
+    display: none;
+  }
+
+  .sea-waves img:nth-child(3) {
+    display: none;
+  }
+  .sea-waves img:nth-child(4) {
+    display: none;
+  }
+
+  .sea-waves img:nth-child(3) {
+    display: none;
+  }
+
+  .sea-waves img:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-height: 500px) {
+  .beach-environment img:nth-child(5) {
+    position: absolute;
+    top: 8em;
+    left: 45em;
+    display: block;
+  }
+  .beach-environment img:nth-child(7) {
+    display: none;
+  }
+}

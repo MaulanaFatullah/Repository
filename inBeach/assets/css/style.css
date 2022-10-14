@@ -34,14 +34,14 @@
 }
 
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
 body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow: hidden;
   background: var(--bg-main-color);
   width: 100%;
@@ -78,7 +78,6 @@ header {
   color: var(--base-color);
   padding-block-start: 30px;
   display: flex;
-  /* background-color: red; */
   width: 100%;
   height: 10vh;
 }
@@ -91,8 +90,8 @@ header {
   padding-inline-start: 2em;
 }
 
-#nav-desktop a>span::after,
-#nav-desktop a>span::before {
+#nav-desktop a > span::after,
+#nav-desktop a > span::before {
   transition: var(--transition-04s);
 
   content: "";
@@ -105,17 +104,17 @@ header {
   height: 5px;
 }
 
-#nav-desktop a>span::after {
+#nav-desktop a > span::after {
   transform: rotate(-45deg);
 }
 
-#nav-desktop a>span::before {
+#nav-desktop a > span::before {
   transform: rotate(45deg);
   bottom: 14px;
   right: -15px;
 }
 
-#nav-desktop>a::before {
+#nav-desktop > a::before {
   content: "";
   position: relative;
   background-color: var(--base-color);
@@ -126,7 +125,7 @@ header {
   bottom: 1px;
 }
 
-#nav-desktop>a:nth-child(1)::before {
+#nav-desktop > a:nth-child(1)::before {
   display: inline-block;
 }
 
@@ -148,9 +147,9 @@ header {
   width: 110%;
 }
 
-#nav-desktop>a::after,
-#nav-desktop .sub-island>a::after,
-.sub-fnb>a::after {
+#nav-desktop > a::after,
+#nav-desktop .sub-island > a::after,
+#nav-desktop .sub-fnb > a::after {
   content: "";
   position: relative;
   display: block;
@@ -162,17 +161,17 @@ header {
   transition: var(--transition-1s);
 }
 
-#nav-desktop>a:hover::after,
-#nav-desktop .sub-island>a:hover::after,
-.sub-fnb>a:hover::after {
+#nav-desktop > a:hover::after,
+#nav-desktop .sub-island > a:hover::after,
+#nav-desktop .sub-fnb > a:hover::after {
   cursor: pointer;
   transform: translateY(0);
   transition: var(--transition-04s);
 }
 
-#nav-desktop>a,
-#nav-desktop .sub-island>a,
-.sub-fnb>a {
+#nav-desktop > a,
+#nav-desktop .sub-island > a,
+#nav-desktop .sub-fnb > a {
   text-decoration: none;
   padding-inline: 2em;
   float: right;
@@ -184,8 +183,10 @@ header {
   font-weight: 600;
   font-size: 1.5em;
   flex-grow: 1;
-  -webkit-animation: header-nav-animation var(--transition-1s) var(--popup-animation) normal;
-  animation: header-nav-animation var(--transition-1s) var(--popup-animation) normal;
+  -webkit-animation: header-nav-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: header-nav-animation var(--transition-1s) var(--popup-animation)
+    normal;
 }
 
 .desktop-island-dropdown {
@@ -285,14 +286,18 @@ header {
 .dropdown-list-size {
   height: var(--dropdown-list-height);
   width: var(--dropdown-list-width);
-  -webkit-animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out normal;
-  animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out normal;
+  -webkit-animation: dropdown-keyframe-animation var(--transition-08s)
+    ease-in-out normal;
+  animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out
+    normal;
 }
 
 .dropdown-animation-list {
   display: flex;
-  -webkit-animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out normal;
-  animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out normal;
+  -webkit-animation: dropdown-keyframe-animation var(--transition-08s)
+    ease-in-out normal;
+  animation: dropdown-keyframe-animation var(--transition-08s) ease-in-out
+    normal;
 }
 
 @keyframes dropdown-animation {
@@ -342,7 +347,8 @@ header {
 }
 
 .close-dropdown {
-  -webkit-animation: close-dropdown-animation var(--transition-08s) ease-in-out normal;
+  -webkit-animation: close-dropdown-animation var(--transition-08s) ease-in-out
+    normal;
   animation: close-dropdown-animation var(--transition-08s) ease-in-out normal;
 }
 
@@ -353,23 +359,22 @@ header {
   right: 4em;
 }
 
-.hamburger-menu:hover>span {
+.hamburger-menu:hover > span {
   background-color: var(--bg-second-color);
 }
-.hamburger-menu>span {
+.hamburger-menu > span {
   display: none;
-  content: '';
+  content: "";
   width: 3em;
   height: 5px;
-  margin-top: .5em;
+  margin-top: 0.5em;
   background-color: var(--base-color);
   border-radius: 100px;
   transition: all var(--transition-1s);
 }
-
 #nav-mobile {
+  display: none;
   color: var(--bg-main-color);
-  flex-direction: column;
   z-index: 99;
   position: absolute;
   top: 0;
@@ -377,23 +382,21 @@ header {
   height: 100vh;
   width: 40vw;
   background-color: var(--base-color);
-  transform: translateX(100%);
-  transition: all var(--transition-04s);
 }
 
 #nav-mobile.active {
+  display: block;
   overflow: auto;
-  transform: translateX(0%);
 }
 
-#nav-mobile .close-btn:hover span{
+#nav-mobile .close-btn:hover span {
   background-color: var(--bg-second-color);
 }
 #nav-mobile .close-btn {
   display: block;
   cursor: pointer;
   position: inherit;
-  padding: 1.5em 2.5em 1.5em .5em;
+  padding: 1.5em 2.5em 1.5em 0.5em;
   top: 3em;
   right: 6em;
 }
@@ -401,7 +404,7 @@ header {
 #nav-mobile .close-btn span {
   display: block;
   position: inherit;
-  content: '';
+  content: "";
   width: 2em;
   height: 5.5px;
   border-radius: 100px;
@@ -427,9 +430,7 @@ header {
   text-align: center;
   width: 100%;
   display: inline-block;
-  color: var(--bg-main-color);
   padding: 20px;
-  list-style-type: disc;
 }
 
 #nav-mobile ul li a {
@@ -439,9 +440,19 @@ header {
 #nav-mobile ul li a:hover {
   color: var(--bg-second-color);
 }
+#nav-mobile .dropdown-list > ul > li > div {
+  font-size: 300;
+}
+#nav-mobile .dropdown-list > ul > li > a {
+  font-weight: 600;
+  font-size: 1.8em;
+}
+#nav-mobile .dropdown-list li {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
 #nav-mobile div.sub-island > a,
-#nav-mobile div.sub-fnb > a
-{
+#nav-mobile div.sub-fnb > a {
   padding: 10px;
   border-bottom: 2px solid var(--bg-main-color);
 }
@@ -450,32 +461,26 @@ header {
 #nav-mobile ul.sub-island,
 #nav-mobile ul.sub-fnb li div,
 #nav-mobile ul.sub-fnb li,
-#nav-mobile ul.sub-fnb 
-{
+#nav-mobile ul.sub-fnb {
   transition: none;
   animation: none;
 }
 #nav-mobile ul.sub-island li div ul,
-#nav-mobile ul.sub-fnb li div ul
-{
-  font-size: .8em;
+#nav-mobile ul.sub-fnb li div ul {
+  font-size: 0.65em;
 }
 #nav-mobile ul.sub-island li ul,
-#nav-mobile ul.sub-fnb li ul
-{
+#nav-mobile ul.sub-fnb li ul {
   border-right: 2px solid var(--bg-main-color);
-  border-left: 2px solid var(--bg-main-color);
+  /* border-left: 2px solid var(--bg-main-color); */
 }
 #nav-mobile ul.sub-island,
-#nav-mobile ul.sub-fnb
-{
+#nav-mobile ul.sub-fnb {
   display: none;
   transition: all var(--transition-04s);
-  color: var(--bg-main-color);
 }
 #nav-mobile ul.sub-island.active,
-#nav-mobile ul.sub-fnb.active
-{
+#nav-mobile ul.sub-fnb.active {
   display: block;
   margin-top: 1em;
   padding-top: 1em;
@@ -518,7 +523,7 @@ main {
 
 .landing-page h1 {
   font-family: "Seaweed Script", cursive;
-  font-size: 4em;
+  font-size: clamp(calc(2em + 40%), calc(3vw - 20%), 4em);
   text-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
   position: absolute;
   color: var(--base-color);
@@ -566,19 +571,21 @@ main {
 
   bottom: 100px;
   left: 100px;
-  -webkit-animation: beach-environment-animation var(--transition-08s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-08s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
 }
 
 /* Patrick */
 .beach-environment img:nth-child(2) {
   width: var(--beach-environment-img-2-width);
-
-  z-index: 8;
   top: 110px;
   left: 100px;
-  -webkit-animation: beach-environment-animation var(--transition-1s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-1s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
 }
 
 /* Umbrella Beach */
@@ -588,8 +595,10 @@ main {
   bottom: 0;
   top: 100px;
   left: 100px;
-  -webkit-animation: beach-environment-animation var(--transition-1-2s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-1-2s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-1-2s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1-2s)
+    var(--popup-animation) normal;
 }
 
 /* Towel */
@@ -599,8 +608,10 @@ main {
   z-index: -1;
   top: 100px;
   left: -60px;
-  -webkit-animation: beach-environment-animation var(--transition-1-5s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-1-5s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-1-5s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1-5s)
+    var(--popup-animation) normal;
 }
 
 /* Shell */
@@ -609,8 +620,10 @@ main {
 
   top: 150px;
   left: 100px;
-  -webkit-animation: beach-environment-animation var(--transition-1s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-1s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
 }
 
 /* Surfboard */
@@ -620,8 +633,10 @@ main {
   z-index: 1;
   position: absolute;
   right: 140px;
-  -webkit-animation: beach-environment-animation var(--transition-08s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-08s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
 }
 
 /* Beach towel 2 */
@@ -630,8 +645,10 @@ main {
 
   position: absolute;
   right: -60px;
-  -webkit-animation: beach-environment-animation var(--transition-08s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-08s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-08s)
+    var(--popup-animation) normal;
 }
 
 /* Rubber ring */
@@ -643,8 +660,10 @@ main {
   transform: rotate(-90deg);
   bottom: 200px;
   right: 0;
-  -webkit-animation: beach-environment-animation var(--transition-1s) var(--popup-animation) normal;
-  animation: beach-environment-animation var(--transition-1s) var(--popup-animation) normal;
+  -webkit-animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: beach-environment-animation var(--transition-1s)
+    var(--popup-animation) normal;
 }
 
 .sea-waves {
@@ -662,10 +681,12 @@ main {
 
 @keyframes sea-waves-animation {
   from {
-    transform: translateY(500px);
+    opacity: 0;
+    transform: translateY(100px);
   }
 
   to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -686,10 +707,12 @@ main {
 
 @-webkit-keyframes sea-waves-animation {
   from {
-    transform: translateY(500px);
+    opacity: 0;
+    transform: translateY(100px);
   }
 
   to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -711,7 +734,8 @@ main {
 .sea-waves img:nth-child(1) {
   z-index: -1;
   bottom: 100px;
-  -webkit-animation: sea-waves-animation-residual 2s var(--popup-animation) normal;
+  -webkit-animation: sea-waves-animation-residual 2s var(--popup-animation)
+    normal;
   animation: sea-waves-animation-residual 2s var(--popup-animation) normal;
 }
 
@@ -732,8 +756,10 @@ main {
 .sea-waves img:nth-child(3) {
   z-index: 3;
   bottom: -20px;
-  -webkit-animation: sea-waves-animation var(--transition-1s) var(--popup-animation) normal;
-  animation: sea-waves-animation var(--transition-1s) var(--popup-animation) normal;
+  -webkit-animation: sea-waves-animation var(--transition-1s)
+    var(--popup-animation) normal;
+  animation: sea-waves-animation var(--transition-1s) var(--popup-animation)
+    normal;
 }
 
 .sea-waves img:nth-child(5) {
@@ -748,118 +774,3 @@ main {
   z-index: 5;
   bottom: -50px;
 } */
-
-@media screen and (max-width: 1830px) {
-  .desktop-island-dropdown {
-    left: calc(var(--desktop-island-dropdown-left-pos) - 3vw);
-  }
-}
-
-@media screen and (max-width: 1640px) {
-  .desktop-island-dropdown {
-    left: calc(var(--desktop-island-dropdown-left-pos) - 6vw);
-  }
-
-  .landing-page h1 {
-    font-size: 3em;
-  }
-
-  .beach-environment img:nth-child(1) {
-    width: calc(var(--beach-environment-img-1-width) - 1.5em);
-  }
-
-  .beach-environment img:nth-child(2) {
-    width: calc(var(--beach-environment-img-2-width) - 1.5em);
-  }
-
-  .beach-environment img:nth-child(3) {
-    width: calc(var(--beach-environment-img-3-width) - 1.5em);
-  }
-
-  .beach-environment img:nth-child(4) {
-    width: calc(var(--beach-environment-img-4-width) - 1.5em);
-  }
-
-  .beach-environment img:nth-child(5) {
-    width: calc(var(--beach-environment-img-5-width) - 1.5em);
-  }
-
-  .beach-environment img:nth-child(6) {
-    width: calc(var(--beach-environment-img-6-width) - 1.5em);
-  }
-
-  .beach-environment img:nth-child(7) {
-    width: calc(var(--beach-environment-img-7-width) - 1.5em);
-  }
-
-  .beach-environment img:nth-child(8) {
-    width: calc(var(--beach-environment-img-8-width) - 1.5em);
-  }
-}
-
-@media screen and (max-width: 1530px) {
-  .desktop-island-dropdown {
-    left: calc(var(--desktop-island-dropdown-left-pos) - 12vw);
-  }
-
-  @media screen and (max-width: 1400px) {
-    .desktop-island-dropdown {
-      left: calc(var(--desktop-island-dropdown-left-pos) - 18vw);
-    }
-  }
-
-  @media screen and (max-width: 1300px) {
-    .landing-page h1 {
-      font-size: 2em;
-    }
-
-    .beach-environment img:nth-child(1) {
-      width: calc(var(--beach-environment-img-1-width) - 2.5em);
-    }
-
-    .beach-environment img:nth-child(2) {
-      width: calc(var(--beach-environment-img-2-width) - 2.5em);
-    }
-
-    .beach-environment img:nth-child(3) {
-      width: calc(var(--beach-environment-img-3-width) - 2.5em);
-    }
-
-    .beach-environment img:nth-child(4) {
-      width: calc(var(--beach-environment-img-4-width) - 2.5em);
-    }
-
-    .beach-environment img:nth-child(5) {
-      width: calc(var(--beach-environment-img-5-width) - 2.5em);
-    }
-
-    .beach-environment img:nth-child(6) {
-      width: calc(var(--beach-environment-img-6-width) - 2.5em);
-    }
-
-    .beach-environment img:nth-child(7) {
-      width: calc(var(--beach-environment-img-7-width) - 2.5em);
-    }
-
-    .beach-environment img:nth-child(8) {
-      width: calc(var(--beach-environment-img-8-width) - 2.5em);
-    }
-  }
-
-  @media screen and (max-width:1380px) {
-    #nav-desktop {
-      display: none;
-    }
-
-    .hamburger-menu span {
-      display: block;
-    }
-  }
-  @media screen and (max-width: 1080px) {
-    #nav-mobile {
-      width: 70vw;
-    }
-    #nav-mobile.active {
-      box-shadow: -40vmax 0 rgba(0, 0, 0, 0.5);
-    }
-  }
