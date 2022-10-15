@@ -13,14 +13,20 @@ document.head.appendChild(styleEl);
 const styleSheet = styleEl.sheet;
 const dropdownKey = 'DROPDOWN_KEY';
 const sublistKey = 'SUBLIST_KEY';
+const subNavMobileKey = 'SUBNAV_MOBILE_KEY';
+const ulSubNavMobileKey = 'UL_SUBNAV_MOBILE_KEY';
 
 const dropdownList = document.querySelectorAll('.dropdown-list>ul>li');
 const dropdownSubList = document.querySelectorAll('.dropdown-list>ul>li>div');
+const subNav = document.querySelectorAll('#nav-mobile div.sub-nav > a');
+const ulSubNav = document.querySelectorAll('#nav-mobile ul.sub-nav');
 
 window.addEventListener('load', function () {
-    if (sessionStorage.getItem(dropdownKey) === null && sessionStorage.getItem(sublistKey) === null) {
+    if (sessionStorage.getItem(dropdownKey) === null || sessionStorage.getItem(sublistKey) === null || sessionStorage.getItem(subNavMobileKey) === null || sessionStorage.getItem(ulSubNavMobileKey) === null) {
         sessionStorage.setItem(dropdownKey, '');
         sessionStorage.setItem(sublistKey, '');
+        sessionStorage.setItem(subNavMobileKey, '');
+        sessionStorage.setItem(ulSubNavMobileKey, '');
     }
     for (let a of dropdownList) {
         a.id = 'dropdown-number-';
@@ -28,18 +34,43 @@ window.addEventListener('load', function () {
     for (const b of dropdownSubList) {
         b.id = 'sublist-number-';
     }
+    for (const c of subNav) {
+        c.id = 'sub-nav-number-';
+    }
+    for (const d of ulSubNav) {
+        d.id = 'ul-sub-nav-number-';
+    }
 
     for (let index = 1; index <= dropdownList.length; index++) {
         document.getElementById('dropdown-number-').id = 'dropdown-number-' + index;
         document.getElementById('sublist-number-').id = 'sublist-number-' + index;
     }
+    for (let v = 1; v <= subNav.length; v++) {
+        document.getElementById('sub-nav-number-').id = 'sub-nav-number-' + v;
+        document.getElementById('ul-sub-nav-number-').id = 'ul-sub-nav-number-' + v;
+    }
+    for (let v = 1; v <= subNav.length; v++) {
+        const subNumber = document.getElementById('sub-nav-number-' + v);
+
+        subNumber.addEventListener('click', function () {
+            // document.querySelector('#nav-mobile ul.sub-island').classList.toggle('active');
+            if (sessionStorage.getItem(subNavMobileKey) === '') {
+                sessionStorage.setItem(subNavMobileKey, 'sub-nav-number-' + v);
+                sessionStorage.setItem(ulSubNavMobileKey, 'ul-sub-nav-number-' + v);
+            } else {
+                sessionStorage.setItem(subNavMobileKey, 'sub-nav-number-' + v);
+                sessionStorage.setItem(ulSubNavMobileKey, 'ul-sub-nav-number-' + v);
+                document.getElementById('ul-sub-nav-number-' + v).classList.toggle('active');
+            }
+        });
+    }
     for (let index = 1; index <= dropdownList.length; index++) {
-        const dropdownListSize = document.querySelector('.dropdown-list-size');
+        // const dropdownListSize = document.querySelector('.dropdown-list-size');
         // document.querySelector('.dropdown-list-size').style.height = '5em'
         const sublistLength = document.querySelectorAll('#sublist-number-' + index + '>ul>li').length
 
         const id = document.getElementById('dropdown-number-' + index);
-        // const x = document.getElementById('dropdown-number-' + (index + 1));
+
         id.addEventListener('click', function () {
             if (document.getElementById('dropdown-number-' + index).classList.contains('dropdown-list-size') || document.getElementById('sublist-number-' + index).classList.contains('dropdown-animation-list')) {
                 document.querySelector('.dropdown-list>ul>li[class~="dropdown-list-size"]').classList.remove('dropdown-list-size');
@@ -145,11 +176,4 @@ btnNavMobile.addEventListener('click', function () {
 });
 btnCloseNavMobile.addEventListener('click', function () {
     navMobile.classList.remove('active');
-});
-
-document.querySelector('#nav-mobile div.sub-island a').addEventListener('click', function () {
-    document.querySelector('#nav-mobile ul.sub-island').classList.toggle('active');
-});
-document.querySelector('#nav-mobile div.sub-fnb a').addEventListener('click', function () {
-    document.querySelector('#nav-mobile ul.sub-fnb').classList.toggle('active');
 });

@@ -114,16 +114,6 @@ header {
   right: -15px;
 }
 
-#nav-desktop > a::before {
-  content: "";
-  position: relative;
-  background-color: var(--base-color);
-  border-radius: 100%;
-  width: 15px;
-  height: 15px;
-  right: -20px;
-  bottom: 1px;
-}
 
 #nav-desktop > a:nth-child(1)::before {
   display: inline-block;
@@ -148,8 +138,7 @@ header {
 }
 
 #nav-desktop > a::after,
-#nav-desktop .sub-island > a::after,
-#nav-desktop .sub-fnb > a::after {
+#nav-desktop .sub-nav > a::after{
   content: "";
   position: relative;
   display: block;
@@ -162,16 +151,14 @@ header {
 }
 
 #nav-desktop > a:hover::after,
-#nav-desktop .sub-island > a:hover::after,
-#nav-desktop .sub-fnb > a:hover::after {
+#nav-desktop .sub-nav > a:hover::after {
   cursor: pointer;
   transform: translateY(0);
   transition: var(--transition-04s);
 }
 
 #nav-desktop > a,
-#nav-desktop .sub-island > a,
-#nav-desktop .sub-fnb > a {
+#nav-desktop .sub-nav > a {
   text-decoration: none;
   padding-inline: 2em;
   float: right;
@@ -451,36 +438,27 @@ header {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-#nav-mobile div.sub-island > a,
-#nav-mobile div.sub-fnb > a {
+#nav-mobile div.sub-nav > a{
   padding: 10px;
   border-bottom: 2px solid var(--bg-main-color);
 }
-#nav-mobile ul.sub-island li div,
-#nav-mobile ul.sub-island li,
-#nav-mobile ul.sub-island,
-#nav-mobile ul.sub-fnb li div,
-#nav-mobile ul.sub-fnb li,
-#nav-mobile ul.sub-fnb {
+#nav-mobile ul.sub-island *, 
+#nav-mobile ul.sub-fnb *{
   transition: none;
   animation: none;
 }
-#nav-mobile ul.sub-island li div ul,
-#nav-mobile ul.sub-fnb li div ul {
+#nav-mobile ul.sub-nav li div ul {
   font-size: 0.65em;
 }
-#nav-mobile ul.sub-island li ul,
-#nav-mobile ul.sub-fnb li ul {
+#nav-mobile ul.sub-nav li ul {
   border-right: 2px solid var(--bg-main-color);
   /* border-left: 2px solid var(--bg-main-color); */
 }
-#nav-mobile ul.sub-island,
-#nav-mobile ul.sub-fnb {
+#nav-mobile ul.sub-nav {
   display: none;
   transition: all var(--transition-04s);
 }
-#nav-mobile ul.sub-island.active,
-#nav-mobile ul.sub-fnb.active {
+#nav-mobile ul.sub-nav.active{
   display: block;
   margin-top: 1em;
   padding-top: 1em;
