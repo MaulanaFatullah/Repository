@@ -48,26 +48,6 @@ body {
   max-height: 100vh;
 }
 
-@keyframes header-nav-animation {
-  from {
-    transform: translateY(-100px);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes header-nav-animation {
-  from {
-    transform: translateY(-100px);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
 header a {
   text-decoration: none;
   color: inherit;
@@ -114,7 +94,6 @@ header {
   right: -15px;
 }
 
-
 #nav-desktop > a:nth-child(1)::before {
   display: inline-block;
 }
@@ -138,7 +117,7 @@ header {
 }
 
 #nav-desktop > a::after,
-#nav-desktop .sub-nav > a::after{
+#nav-desktop .sub-nav > a::after {
   content: "";
   position: relative;
   display: block;
@@ -159,13 +138,12 @@ header {
 
 #nav-desktop > a,
 #nav-desktop .sub-nav > a {
-  text-decoration: none;
   padding-inline: 2em;
   float: right;
+  
 }
 
 #nav-desktop {
-  color: var(--base-color);
   padding-inline-end: 2em;
   font-weight: 600;
   font-size: 1.5em;
@@ -176,37 +154,36 @@ header {
     normal;
 }
 
-.desktop-island-dropdown {
-  --desktop-island-dropdown-left-pos: clamp(26vw, 45vw + 10% ,65vw);
-  z-index: 99;
+.dropdown-content> div > ul > li > a:focus,
+.dropdown-content div > ul > li > a:hover {
+  color: var(--bg-second-color);
+  transition: all var(--transition-08s);
+}
+
+.dropdown-content {
+  z-index: 121;
   display: none;
   position: absolute;
   top: 4em;
-  left: var(--desktop-island-dropdown-left-pos);
   color: var(--bg-main-color);
   background-color: var(--base-color);
   border-radius: 10px;
   transition: var(--transition-1s);
   -webkit-animation: dropdown-animation var(--transition-04s) ease-in-out normal;
   animation: dropdown-animation var(--transition-04s) ease-in-out normal;
+  transition: all var(--transition-08s);
+}
+
+.desktop-island-dropdown {
+  --desktop-island-dropdown-left-pos: clamp(26vw, 45vw + 10%, 65vw);
+  left: var(--desktop-island-dropdown-left-pos);
 }
 
 .desktop-fnb-dropdown {
-  z-index: 99;
-  display: none;
-  position: absolute;
-  top: 4em;
   right: 1.5em;
-  color: var(--bg-main-color);
-  background-color: var(--base-color);
-  border-radius: 10px;
-  transition: var(--transition-1s);
-  -webkit-animation: dropdown-animation var(--transition-04s) ease-in-out normal;
-  animation: dropdown-animation var(--transition-04s) ease-in-out normal;
 }
 
-.desktop-island-dropdown a,
-.desktop-fnb-dropdown a {
+.dropdown-content {
   font-family: "Karla", sans-serif;
 }
 
@@ -244,32 +221,6 @@ header {
   transition: all var(--transition-08s);
 }
 
-@keyframes dropdown-keyframe-animation {
-  from {
-    opacity: 0;
-    height: var(--dropdown-list-initial-height);
-    width: var(--fnb-list-initial-width);
-  }
-
-  to {
-    height: var(--dropdown-list-height);
-    width: var(--dropdown-list-width);
-  }
-}
-
-@-webkit-keyframes dropdown-keyframe-animation {
-  from {
-    opacity: 0;
-    height: var(--dropdown-list-initial-height);
-    width: var(--fnb-list-initial-width);
-  }
-
-  to {
-    height: var(--dropdown-list-height);
-    width: var(--dropdown-list-width);
-  }
-}
-
 .dropdown-list-size {
   height: var(--dropdown-list-height);
   width: var(--dropdown-list-width);
@@ -287,56 +238,10 @@ header {
     normal;
 }
 
-@keyframes dropdown-animation {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes close-dropdown-animation {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-}
-
-@-webkit-keyframes dropdown-animation {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes close-dropdown-animation {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-}
-
 .close-dropdown {
-  -webkit-animation: close-dropdown-animation var(--transition-08s) ease-in-out
+  -webkit-animation: close-dropdown-animation var(--transition-04s) ease-in-out
     normal;
-  animation: close-dropdown-animation var(--transition-08s) ease-in-out normal;
+  animation: close-dropdown-animation var(--transition-04s) ease-in-out normal;
 }
 
 /* Nav mobile */
@@ -349,6 +254,7 @@ header {
 .hamburger-menu:hover > span {
   background-color: var(--bg-second-color);
 }
+
 .hamburger-menu > span {
   display: none;
   content: "";
@@ -359,6 +265,7 @@ header {
   border-radius: 100px;
   transition: all var(--transition-1s);
 }
+
 #nav-mobile {
   display: none;
   color: var(--bg-main-color);
@@ -367,8 +274,9 @@ header {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 40vw;
+  width: 50vw;
   background-color: var(--base-color);
+  box-shadow: -50vw 0 #00000080;
 }
 
 #nav-mobile.active {
@@ -379,6 +287,7 @@ header {
 #nav-mobile .close-btn:hover span {
   background-color: var(--bg-second-color);
 }
+
 #nav-mobile .close-btn {
   display: block;
   cursor: pointer;
@@ -424,46 +333,57 @@ header {
   font-size: 2em;
   transition: all var(--transition-1s);
 }
+
 #nav-mobile ul li a:hover {
   color: var(--bg-second-color);
 }
+
 #nav-mobile .dropdown-list > ul > li > div {
   font-size: 300;
 }
+
 #nav-mobile .dropdown-list > ul > li > a {
   font-weight: 600;
   font-size: 1.8em;
 }
+
 #nav-mobile .dropdown-list li {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-#nav-mobile div.sub-nav > a{
+
+#nav-mobile div.sub-nav > a {
   padding: 10px;
   border-bottom: 2px solid var(--bg-main-color);
 }
-#nav-mobile ul.sub-island *, 
-#nav-mobile ul.sub-fnb *{
+
+#nav-mobile ul.sub-island *,
+#nav-mobile ul.sub-fnb * {
   transition: none;
   animation: none;
 }
+
 #nav-mobile ul.sub-nav li div ul {
   font-size: 0.65em;
 }
+
 #nav-mobile ul.sub-nav li ul {
   border-right: 2px solid var(--bg-main-color);
   /* border-left: 2px solid var(--bg-main-color); */
 }
+
 #nav-mobile ul.sub-nav {
   display: none;
   transition: all var(--transition-04s);
 }
-#nav-mobile ul.sub-nav.active{
+
+#nav-mobile ul.sub-nav.active {
   display: block;
   margin-top: 1em;
   padding-top: 1em;
   border-bottom: 2px solid var(--bg-main-color);
 }
+
 main {
   width: 100%;
   height: 100%;
@@ -475,38 +395,15 @@ main {
   flex-direction: column;
 }
 
-@keyframes landing-text {
-  from {
-    transform: translateX(-2em);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes landing-text {
-  from {
-    transform: translateX(-2em);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 .landing-page h1 {
+  z-index: 100;
   font-family: "Seaweed Script", cursive;
   font-size: clamp(calc(2em + 40%), calc(3vw - 20%), 4em);
-  text-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 5px 0 5px rgba(0, 0, 0, 0.39);
   position: absolute;
   color: var(--base-color);
   padding-top: 1em;
-  padding-left: 2em;
+  padding-inline: 2em;
   -webkit-animation: landing-text var(--transition-1s) ease-in-out normal;
   animation: landing-text var(--transition-1s) ease-in-out normal;
 }
@@ -519,28 +416,6 @@ main {
   width: auto;
   height: auto;
   position: relative;
-}
-
-@keyframes beach-environment-animation {
-  from {
-    transform: scale(0);
-    filter: blur(8px);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-@-webkit-keyframes beach-environment-animation {
-  from {
-    transform: scale(0);
-    filter: blur(8px);
-  }
-
-  to {
-    transform: scale(1);
-  }
 }
 
 /* Beach ball */
@@ -655,58 +530,6 @@ main {
   bottom: 0;
   width: 100%;
   height: auto;
-}
-
-@keyframes sea-waves-animation {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes sea-waves-animation-residual {
-  0% {
-    opacity: 0;
-  }
-
-  60% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes sea-waves-animation {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes sea-waves-animation-residual {
-  0% {
-    opacity: 0;
-  }
-
-  60% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 .sea-waves img:nth-child(1) {
