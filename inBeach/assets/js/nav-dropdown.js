@@ -76,27 +76,25 @@ window.addEventListener('load', function () {
                     styleSheet.deleteRule(0);
                     styleSheet.deleteRule(0);
                 }
+                if (styleEl.sheet.cssRules.length == 0) { // should be else
+                    styleSheet.insertRule('#nav-desktop > #' + idDivSubNav.id + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
+                    styleSheet.insertRule('#nav-desktop > #' + idDivSubNav.id + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
+                }
                 const d = document.getElementById('nav-desktop-container-number-' + index);
 
                 if (sessionStorage.getItem(desktopContainerNumber) == d.id) {
                     d.style.display = 'flex';
                 } else if (sessionStorage.getItem(desktopContainerNumber) != d.id) {
-                    d.style.display = 'flex';
-
                     const x = document.getElementById(sessionStorage.getItem(desktopContainerNumber));
                     x.classList.add('close-dropdown');
+                    d.style.display = 'flex';
                     x.addEventListener('webkitAnimationEnd', function () {
                         x.style.display = 'none';
                         x.classList.remove('close-dropdown');
                         x.removeEventListener('webkitAnimationEnd', arguments.callee, false);
+                        sessionStorage.setItem(divSubNavDesktopKey, 'div-sub-nav-number-' + index);
+                        sessionStorage.setItem(desktopContainerNumber, 'nav-desktop-container-number-' + index);
                     }, false);
-                    sessionStorage.setItem(divSubNavDesktopKey, 'div-sub-nav-number-' + index);
-                    sessionStorage.setItem(desktopContainerNumber, 'nav-desktop-container-number-' + index);
-                } 
-
-                if (styleEl.sheet.cssRules.length == 0) {
-                    styleSheet.insertRule('#nav-desktop > #' + sessionStorage.getItem(divSubNavDesktopKey) + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
-                    styleSheet.insertRule('#nav-desktop > #' + sessionStorage.getItem(divSubNavDesktopKey) + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
                 }
             }
         });
@@ -163,22 +161,17 @@ window.addEventListener('load', function () {
 });
 
 main.addEventListener('click', function () {
-    if (desktopFnbDropdown.style.display == 'flex') {
-        desktopFnbDropdown.classList.add('close-dropdown');
-        desktopFnbDropdown.addEventListener('webkitAnimationEnd', function () {
-            desktopFnbDropdown.classList.remove('close-dropdown');
-            desktopFnbDropdown.style.display = 'none';
-            desktopFnbDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
-        }, false);
-    } else if (desktopIslandDropdown.style.display == 'flex') {
-        desktopIslandDropdown.classList.add('close-dropdown');
-
-        desktopIslandDropdown.addEventListener('webkitAnimationEnd', function () {
-            desktopIslandDropdown.classList.remove('close-dropdown');
-            desktopIslandDropdown.style.display = 'none';
-            desktopIslandDropdown.removeEventListener('webkitAnimationEnd', arguments.callee, false);
-        }, false);
-    }
+    // for (let index = 1; index <= divSubNav.length; index++) {
+        const d = document.getElementById(sessionStorage.getItem(desktopContainerNumber));
+        if (d.style.display == 'flex') {
+            d.classList.add('close-dropdown');
+            d.addEventListener('webkitAnimationEnd', function () {
+                d.classList.remove('close-dropdown');
+                d.style.display = 'none';
+                d.removeEventListener('webkitAnimationEnd', arguments.callee, false);
+            }, false);
+        } 
+    // }
     if (!document.getElementById(sessionStorage.getItem(dropdownKey)).classList.contains('dropdown-list-size') || !document.getElementById(sessionStorage.getItem(sublistKey)).classList.contains('dropdown-animation-list')) {
         document.getElementById(sessionStorage.getItem(dropdownKey)).classList.remove('dropdown-list-size');
         document.getElementById(sessionStorage.getItem(sublistKey)).classList.remove('dropdown-animation-list');

@@ -177,7 +177,7 @@ header {
 }
 
 .desktop-island-dropdown {
-  --desktop-island-dropdown-left-pos: 56vw;
+  --desktop-island-dropdown-left-pos: clamp(26vw, 45vw + 10% ,65vw);
   z-index: 99;
   display: none;
   position: absolute;
