@@ -2,7 +2,7 @@
   from {
     opacity: 0;
     height: var(--dropdown-list-initial-height);
-    width: var(--fnb-list-initial-width);
+    width: var(--initial-width-list);
   }
 
   to {
@@ -15,7 +15,7 @@
   from {
     opacity: 0;
     height: var(--dropdown-list-initial-height);
-    width: var(--fnb-list-initial-width);
+    width: var(--initial-width-list);
   }
 
   to {

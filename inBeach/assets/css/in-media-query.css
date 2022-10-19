@@ -1,15 +1,23 @@
 /* media query max-width */
-@media screen and (max-width: 1830px) {
-  .desktop-island-dropdown {
-    left: calc(var(--desktop-island-dropdown-left-pos) - 3vw);
+@media screen and (max-width: 1800px) {
+  .dropdown-number-5 {
+    right: max(calc(var(--first-value) + 10%), calc(var(--second-value) + 1vw));
   }
 }
 
 @media screen and (max-width: 1640px) {
-  .desktop-island-dropdown {
-    left: calc(var(--desktop-island-dropdown-left-pos) - 6vw);
+  .dropdown-number-5 {
+    right: max(calc(var(--first-value) + 15%), calc(var(--second-value) + 5vw));
   }
-
+  .dropdown-number-4 {
+    right: max(calc(var(--first-value) + 10%), calc(var(--second-value) + 1vw));
+  }
+  .dropdown-number-3 {
+    right: max(calc(var(--first-value) + 5%), calc(var(--second-value) + 7vw));
+  }
+  .dropdown-number-2 {
+    right: max(calc(var(--first-value) + 2%), calc(var(--second-value) + 3vw));
+  }
   .beach-environment img {
     transform: translateY(5em);
   }
@@ -47,14 +55,8 @@
 }
 
 @media screen and (max-width: 1530px) {
-  .desktop-island-dropdown {
-    left: calc(var(--desktop-island-dropdown-left-pos) - 12vw);
-  }
 }
 @media screen and (max-width: 1400px) {
-  .desktop-island-dropdown {
-    left: calc(var(--desktop-island-dropdown-left-pos) - 18vw);
-  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -452,7 +454,7 @@
     bottom: 10em;
   }
 
-  .sea-waves img{
+  .sea-waves img {
     display: none;
   }
 }
