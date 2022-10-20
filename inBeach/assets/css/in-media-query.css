@@ -381,7 +381,7 @@
   }
 }
 /* media query max-height */
-@media screen and (max-height: 900px) {
+@media screen and (max-height: 850px) {
   .beach-environment img:nth-child(6) {
     display: none;
   }

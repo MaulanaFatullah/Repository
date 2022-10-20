@@ -193,27 +193,24 @@ main {
   visibility: hidden;
   transform: translateY(-100%);
   opacity: .5;
-
   font-family: "Karla", sans-serif;
   overflow-y: scroll;
   padding: 2.5em;
   margin-left: 5vw;
-  margin-top: 5vw;
+  margin-top: 12vh;
   position: absolute;
   top: -50vh;
   z-index: 999;
   max-width: 90vw;
-  max-height: 80vh;
+  max-height: 600px;
   background-color: var(--base-color);
   border-radius: 10px;
   color: var(--bg-main-color);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.445);
   transition: all var(--transition-04s);
 }
-.about-us h2 {
-  flex-grow: 1;
+.about-us h1 {
   padding-bottom: 20px;
-  width: 50%;
 }
 .section-about {
   max-width: 50%;
@@ -228,7 +225,7 @@ main {
 .section-suggestion-form {
   width: 80%;
 }
-.section-suggestion-form button {
+.about-us button {
   cursor: pointer;
   color: var(--base-color);
   font-size: 1.1em;
@@ -242,7 +239,7 @@ main {
   height: 2.5em;
   transition: all var(--transition-04s);
 }
-.section-suggestion-form button:hover {
+.about-us button:hover {
   color: var(--bg-second-color);
   background-color: var(--base-color);
   border: 2px solid var(--bg-second-color);
@@ -285,4 +282,68 @@ textarea:focus {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.404);
   padding-inline: 0.2em;
   transition: all var(--transition-04s);
+}
+.arrow-down {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.arrow-down a {
+  padding: 20px 20px 20px 35px;
+}
+.arrow-down a:hover {
+  -webkit-animation: arrow-hover-animation var(--transition-1-5s) ease-in-out infinite;
+  animation: arrow-hover-animation var(--transition-1-5s) ease-in-out infinite;
+}
+.arrow-down span {
+  position: absolute;
+}
+.arrow-down span::after,
+.arrow-down span::before{
+  content: "";
+  bottom: 10px;
+  position: absolute;
+  width: 1.2em;
+  height: 4px;
+  background: var(--bg-second-color);
+  border-radius: 100px;
+}
+.arrow-down span:nth-child(1) {
+  transform: rotate(45deg);
+  margin-left: -1.8em;
+}
+.arrow-down span:nth-child(2) {
+  transform: rotate(-45deg);
+  margin-top: 13px;
+}
+.section-source {
+  max-width: 50%;
+  padding-inline: 2em;
+}
+.section-source a:visited {
+  color: var(--text-visited-color);
+}
+.section-source a:hover {
+  color: var(--bg-second-color);
+}
+.section-source a {
+  text-decoration: none;
+}
+.section-source p {
+  line-height: 2em;
+}
+.article-source,
+.image-source
+{
+  padding-bottom: 20px;
+}
+
+.article-source-title,
+.image-source-title
+{
+  font-size: 1.3em;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+.article-source-title {
+  font-size: 1.2em;
 }

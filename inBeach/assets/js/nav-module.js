@@ -5,11 +5,11 @@ document.head.appendChild(styleEl);
 const styleSheet = styleEl.sheet;
 
 window.addEventListener('load', function () {
-    if (sessionStorage.getItem(libVar.dropdownKey) === null || sessionStorage.getItem(libVar.sublistKey) === null || sessionStorage.getItem(libVar.ulSubNavMobileKey) === null || sessionStorage.getItem(libVar.desktopContainerNumber) === null || sessionStorage.getItem(libVar.modalNumberKey) === null) {
+    if (sessionStorage.getItem(libVar.dropdownKey) === null || sessionStorage.getItem(libVar.sublistKey) === null || sessionStorage.getItem(libVar.ulSubNavMobileKey) === null || sessionStorage.getItem(libVar.desktopContainerNumberKey) === null || sessionStorage.getItem(libVar.modalNumberKey) === null) {
         sessionStorage.setItem(libVar.dropdownKey, '');
         sessionStorage.setItem(libVar.sublistKey, '');
         sessionStorage.setItem(libVar.ulSubNavMobileKey, '');
-        sessionStorage.setItem(libVar.desktopContainerNumber, '');
+        sessionStorage.setItem(libVar.desktopContainerNumberKey, '');
         sessionStorage.setItem(libVar.modalNumberKey, '');
     }
 });
@@ -26,7 +26,7 @@ for (const c of libVar.subNavAnchor) {
 for (const d of libVar.ulSubNav) {
     d.id = libVar.__ulSubNavNumber;
 }
-for (const e of libVar.divSubNav) {
+for (const e of libVar.divSubNavAnc) {
     e.id = libVar.__divSubNavNumber;
 }
 for (const f of libVar.navDesktopContainer) {
@@ -38,9 +38,15 @@ for (const g of libVar.navModalAnchor) {
 for (const h of libVar.modalList) {
     h.id = libVar.__navModalNumber;
 }
+for (const e of libVar.divSubNav) {
+    e.id = libVar.__divSubNavAncNumber;
+}
 
-for (let index = 1; index <= libVar.divSubNav.length; index++) {
+for (let index = 1; index <= libVar.divSubNavAnc.length; index++) {
     document.getElementById(libVar.__divSubNavNumber).id = libVar.__divSubNavNumber + index;
+}
+for (let index = 1; index <= libVar.divSubNav.length; index++) {
+    document.getElementById(libVar.__divSubNavAncNumber).id = libVar.__divSubNavAncNumber + index;
 }
 for (let index = 1; index <= libVar.navDesktopContainer.length; index++) {
     document.getElementById(libVar.__containerNumber).id = libVar.__containerNumber + index;
@@ -59,49 +65,35 @@ for (let v = 1; v <= libVar.subNavAnchor.length; v++) {
 }
 
 // Nav Dropdown
-for (let index = 1; index <= libVar.divSubNav.length; index++) {
+for (let index = 1; index <= libVar.divSubNavAnc.length; index++) {
     const idDivSubNav = document.getElementById(libVar.__divSubNavNumber + index);
+    const divSubNav = document.getElementById(libVar.__divSubNavAncNumber + index);
     const d = document.getElementById(libVar.__containerNumber + index);
 
     idDivSubNav.addEventListener('click', function () {
+
+        if (sessionStorage.getItem(libVar.desktopContainerNumberKey) === '' || sessionStorage.getItem(libVar.desktopContainerNumberKey) === d.id) {
+            d.classList.toggle('active-nav');
+            sessionStorage.setItem(libVar.desktopContainerNumberKey, libVar.__containerNumber + index);
+        }
+        if (sessionStorage.getItem(libVar.desktopContainerNumberKey) != d.id) {
+            d.classList.toggle('active-nav');
+            if (sessionStorage.getItem(libVar.desktopContainerNumberKey) != '') {
+                document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumberKey)).classList.remove('active');
+                sessionStorage.setItem(libVar.desktopContainerNumberKey, libVar.__containerNumber + index);
+            }
+        }
+
+        if (sessionStorage.getItem(libVar.modalNumberKey) != '' && document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.contains('active')) {
+            document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.remove('active');
+        }
         if (styleEl.sheet.cssRules.length > 1) {
             styleSheet.deleteRule(0);
             styleSheet.deleteRule(0);
         }
         if (styleEl.sheet.cssRules.length == 0) {
-            styleSheet.insertRule('#nav-desktop > #' + idDivSubNav.id + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
-            styleSheet.insertRule('#nav-desktop > #' + idDivSubNav.id + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
-        }
-        if (sessionStorage.getItem(libVar.desktopContainerNumber) === '') {
-            sessionStorage.setItem(libVar.desktopContainerNumber, libVar.__containerNumber + index);
-            d.style.display = 'flex';
-        } else {
-            if (sessionStorage.getItem(libVar.desktopContainerNumber) == d.id) {
-                d.style.display = 'flex';
-            } else {
-                const s = document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumber));
-                s.classList.add('close-dropdown');
-                d.style.display = 'flex';
-                s.addEventListener('webkitAnimationEnd', function x() {
-                    s.style.display = 'none';
-                    s.classList.remove('close-dropdown');
-                    sessionStorage.setItem(libVar.desktopContainerNumber, libVar.__containerNumber + index);
-                    s.removeEventListener('webkitAnimationEnd', x, false);
-                }, false);
-            }
-        }
-    });
-}
-// Dropdown list
-for (let v = 1; v <= libVar.subNavAnchor.length; v++) {
-    const subNumber = document.getElementById(libVar.__subNavNumber + v);
-
-    subNumber.addEventListener('click', function () {
-        if (sessionStorage.getItem(libVar.ulSubNavMobileKey) === '') {
-            sessionStorage.setItem(libVar.ulSubNavMobileKey, libVar.__ulSubNavNumber + v);
-        } else {
-            sessionStorage.setItem(libVar.ulSubNavMobileKey, libVar.__ulSubNavNumber + v);
-            document.getElementById(libVar.__ulSubNavNumber + v).classList.toggle('active');
+            styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
+            styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
         }
     });
 }
@@ -140,22 +132,34 @@ for (let index = 1; index <= libVar.modalList.length; index++) {
     const a = document.getElementById(libVar.__navModalAncNumber + index);
     const navModal = document.getElementById(libVar.__navModalNumber + index);
     a.addEventListener('click', function () {
-        navModal.classList.toggle('active');
-        sessionStorage.setItem(libVar.modalNumberKey, libVar.__navModalNumber + index)
+        if (sessionStorage.getItem(libVar.modalNumberKey) === '' || sessionStorage.getItem(libVar.modalNumberKey) === navModal.id) {
+            navModal.classList.toggle('active');
+            sessionStorage.setItem(libVar.modalNumberKey, libVar.__navModalNumber + index);
+        }
+        if (sessionStorage.getItem(libVar.modalNumberKey) != navModal.id) {
+            navModal.classList.toggle('active');
+            if (sessionStorage.getItem(libVar.modalNumberKey) != '') {
+                document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.remove('active');
+                sessionStorage.setItem(libVar.modalNumberKey, libVar.__navModalNumber + index);
+            }
+        }
+        
+        if (styleEl.sheet.cssRules.length > 1) {
+            styleSheet.deleteRule(0);
+            styleSheet.deleteRule(0);
+        }
+        if (sessionStorage.getItem(libVar.desktopContainerNumberKey) != '') {
+            document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumberKey)).classList.remove('active-nav');
+            sessionStorage.setItem(libVar.desktopContainerNumberKey, '');
+        }
     });
 }
 
-// Main page
-libVar.main.addEventListener('click', function () {
-    if (sessionStorage.getItem(libVar.desktopContainerNumber) != '') {
-        const d = document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumber));
-        sessionStorage.setItem(libVar.desktopContainerNumber, '');
-        d.classList.add('close-dropdown');
-        d.addEventListener('webkitAnimationEnd', function x() {
-            d.classList.remove('close-dropdown');
-            d.style.display = 'none';
-            d.removeEventListener('webkitAnimationEnd', x, false);
-        }, false);
+// Landing page
+libVar.landingPage.addEventListener('click', function () {
+    if (sessionStorage.getItem(libVar.desktopContainerNumberKey) != '') {
+        document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumberKey)).classList.remove('active-nav');
+        sessionStorage.setItem(libVar.desktopContainerNumberKey, '');
     }
     //actually don't need this code
     // if (document.getElementById(sessionStorage.getItem(libVar.dropdownKey)).classList.contains('dropdown-list-size') || document.getElementById(sessionStorage.getItem(libVar.sublistKey)).classList.contains('dropdown-animation-list')) {
@@ -166,8 +170,9 @@ libVar.main.addEventListener('click', function () {
         styleSheet.deleteRule(0);
         styleSheet.deleteRule(0);
     }
-    if (document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.contains('active')) {
+    if (sessionStorage.getItem(libVar.modalNumberKey) != '') {
         document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.remove('active');
+        sessionStorage.setItem(libVar.modalNumberKey, '');
     }
 });
 
@@ -178,3 +183,17 @@ libVar.btnNavMobile.addEventListener('click', function () {
 libVar.btnCloseNavMobile.addEventListener('click', function () {
     libVar.navMobile.classList.remove('active');
 });
+
+// Dropdown list
+for (let v = 1; v <= libVar.subNavAnchor.length; v++) {
+    const subNumber = document.getElementById(libVar.__subNavNumber + v);
+
+    subNumber.addEventListener('click', function () {
+        if (sessionStorage.getItem(libVar.ulSubNavMobileKey) === '') {
+            sessionStorage.setItem(libVar.ulSubNavMobileKey, libVar.__ulSubNavNumber + v);
+        } else {
+            sessionStorage.setItem(libVar.ulSubNavMobileKey, libVar.__ulSubNavNumber + v);
+            document.getElementById(libVar.__ulSubNavNumber + v).classList.toggle('active');
+        }
+    });
+}
