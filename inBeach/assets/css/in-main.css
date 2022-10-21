@@ -200,9 +200,9 @@ main {
   margin-top: 12vh;
   position: absolute;
   top: -50vh;
-  z-index: 999;
+  z-index: 131;
   max-width: 90vw;
-  max-height: 600px;
+  max-height: max(600px, 75vh);
   background-color: var(--base-color);
   border-radius: 10px;
   color: var(--bg-main-color);
@@ -210,7 +210,7 @@ main {
   transition: all var(--transition-04s);
 }
 .about-us h1 {
-  padding-bottom: 20px;
+  padding-block: 20px;
 }
 .section-about {
   max-width: 50%;
@@ -223,7 +223,7 @@ main {
   letter-spacing: .5px;
 }
 .section-suggestion-form {
-  width: 80%;
+  max-width: 50%;
 }
 .about-us button {
   cursor: pointer;
@@ -273,22 +273,26 @@ textarea:focus {
 }
 
 .social-media-icons span:hover {
-  font-size: 4.5em;
-  padding-right: 20px;
+  transform: scale(.8);
 }
 .social-media-icons span {
   cursor: pointer;
   font-size: 5em;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.404);
   padding-inline: 0.2em;
+  /* margin-block: 1em; */
   transition: all var(--transition-04s);
 }
+
+.section-about .arrow-down {
+  visibility: hidden;
+}
 .arrow-down {
-  margin-bottom: 20px;
+  /* margin-block: 20px; */
   width: 100%;
 }
 .arrow-down a {
-  padding: 20px 20px 20px 35px;
+  padding: 30px 20px 30px 35px;
 }
 .arrow-down a:hover {
   -webkit-animation: arrow-hover-animation var(--transition-1-5s) ease-in-out infinite;

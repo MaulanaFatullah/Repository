@@ -212,7 +212,7 @@ header {
 #nav-mobile {
   display: none;
   color: var(--bg-main-color);
-  z-index: 111;
+  z-index: 151;
   position: absolute;
   top: 0;
   right: 0;

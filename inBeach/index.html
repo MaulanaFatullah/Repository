@@ -209,6 +209,7 @@
 
                 <li><a href="#daytrips">Daytrips</a></li>
                 <li><a href="#surfing">Surfing</a></li>
+                
                 <li>
                     <div class="sub-nav">
                         <a href="#fnb">F&B</a>
@@ -247,6 +248,9 @@
                         </div>
                     </div>
                 </li>
+
+                <li><a href="#about">About us</a></li>
+
             </ul>
         </nav>
     </header>
@@ -274,7 +278,7 @@
         </div>
         <div class="modal-list">
             <div class="modal about-us">
-                <div class="flex-row about-one">
+                <div class="flex-row about-one container">
                     <div class="flex-grow section-about">
                         <h1>About us</h1>
                         <p class="container">
@@ -294,20 +298,25 @@
                                 <span class="discord"><i class="fab fa-discord"><a href="#"></a></i></span>
                             </div>
                         </div>
+                        <div class="arrow-down flex-row justify-content-center">
+                            <a href="#contact-us">
+                                <span></span>
+                                <span></span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="flex-grow section-suggestion-form">
+                    <div id="contact-us" class="flex-grow section-suggestion-form">
                         <form action="#" class="flex-column">
                             <div class="flex-row">
-                                <h1 class="flex-grow">Contact us</h1>
+                                <h1 class="flex-grow text-align-left">Contact us</h1>
                                 <button type="submit">Submit</button>
                             </div>
-                            <label for="nama">Name :</label>
-                            <input type="text" name="name" id="name">
-                            <label for="email">E-mail :</label>
-                            <input type="email" name="email" id="email">
+                            <label for="fullNameContact">Full name :</label>
+                            <input type="text" name="fullNameContact" id="fullNameContact">
+                            <label for="emailCantact">E-mail :</label>
+                            <input type="email" name="emailCantact" id="emailCantact">
                             <label for="contact-description">Type something :</label>
-                            <textarea name="contact-description" id="contact-description" cols="30"
-                                rows="10"></textarea>
+                            <textarea name="descriptionContact" id="descriptionContact" cols="30"rows="10"></textarea>
                         </form>
                     </div>
                 </div>
@@ -317,19 +326,19 @@
                         <span></span>
                     </a>
                 </div>
-                <div id="about-two" class="flex-row about-two">
+                <div id="about-two" class="flex-row about-two container">
                     <div class="flex-grow section-contact">
                         <form action="#" class="flex-column">
                             <div class="flex-row">
-                                <h1 class="flex-grow">Suggestion Form</h1>
+                                <h1 class="flex-grow text-align-left">Suggestion Form</h1>
                                 <button type="submit">Submit</button>
                             </div>
-                            <label for="name">Name :</label>
-                            <input type="text" name="name" id="name">
-                            <label for="email">E-mail :</label>
-                            <input type="email" name="email" id="email">
+                            <label for="suggestionName">Name :</label>
+                            <input type="text" name="suggestionName" id="suggestionName">
+                            <label for="suggestionEmail">E-mail :</label>
+                            <input type="email" name="suggestionEmail" id="suggestionEmail">
                             <label for="description">Description :</label>
-                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                            <textarea name="descriptionSuggestion" id="descriptionSuggestion" cols="30" rows="10"></textarea>
                         </form>
                     </div>
                     <div class="flex-grow section-source">
@@ -338,25 +347,26 @@
                             <div class="article-source-title">
                                 Article by
                             </div>
-                            <p><a href="https://www.indonesia.travel/id/en/trip-ideas/15-exhilarating-surfing-destination-s-you-should-visit-in-indonesia" target="_blank">Wonderful Indonesia</a></p>
+                            <p><a href="https://www.indonesia.travel/id/en/trip-ideas/15-exhilarating-surfing-destination-s-you-should-visit-in-indonesia"
+                                    target="_blank">Wonderful Indonesia</a></p>
                         </div>
                         <div class="image-source">
                             <div class="image-source-title">
                                 Image by
                             </div>
-                                <p><a href="https://www.flaticon.com/free-icons/starfish" title="starfish icons" target="_blank">Starfish icons created by Freepik - Flaticon</a></p>
-                                <p><a href="https://www.flaticon.com/free-icons/beach-towel" title="beach towel icons" target="_blank">Beach towel icons created by Freepik - Flaticon</a></p>
-                                <p><a href="https://www.flaticon.com/free-icons/beach-ball" title="beach ball icons">Beach ball icons created by Freepik - Flaticon</a></p>
-                                <p><a href="https://www.flaticon.com/free-icons/rubber-ring" title="rubber ring icons">Rubber ring icons created by Freepik - Flaticon</a></p>
-                                <p><a href="https://www.flaticon.com/free-icons/sports-and-competition" title="sports and competition icons" target="_blank">Sports and competition icons created by Freepik - Flaticon</a></p>
-                                <p><a href="https://www.flaticon.com/free-icons/seafood" title="seafood icons" target="_blank">Seafood icons created by Freepik - Flaticon</a></p>
+                            <p><a href="https://www.flaticon.com/free-icons/starfish" title="starfish icons" target="_blank">Starfish icons created by Freepik - Flaticon</a></p>
+                            <p><a href="https://www.flaticon.com/free-icons/beach-towel" title="beach towel icons" target="_blank">Beach towel icons created by Freepik - Flaticon</a></p>
+                            <p><a href="https://www.flaticon.com/free-icons/beach-ball" title="beach ball icons" target="_blank">Beach ball icons created by Freepik - Flaticon</a></p>
+                            <p><a href="https://www.flaticon.com/free-icons/rubber-ring"title="rubber ring icons" target="_blank">Rubber ring icons created by Freepik - Flaticon</a></p>
+                            <p><a href="https://www.flaticon.com/free-icons/sports-and-competition" title="sports and competition icons" target="_blank">Sports and competition icons created by Freepik - Flaticon</a></p>
+                            <p><a href="https://www.flaticon.com/free-icons/seafood" title="seafood icons" target="_blank">Seafood icons created by Freepik - Flaticon</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal surfing">
                 <div class="flex-row">
-                    <h1>surfing</h1>
+                    <h1>Surfing</h1>
                 </div>
             </div>
             <div class="modal daytrips">

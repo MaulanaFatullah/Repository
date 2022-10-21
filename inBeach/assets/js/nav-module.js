@@ -32,14 +32,17 @@ for (const e of libVar.divSubNavAnc) {
 for (const f of libVar.navDesktopContainer) {
     f.id = libVar.__containerNumber;
 }
-for (const g of libVar.navModalAnchor) {
-    g.id = libVar.__navModalAncNumber;
+for (const g of libVar.navModalDesktopAnchor) {
+    g.id = libVar.__navModalDesktopAncNumber;
 }
 for (const h of libVar.modalList) {
     h.id = libVar.__navModalNumber;
 }
 for (const e of libVar.divSubNav) {
     e.id = libVar.__divSubNavAncNumber;
+}
+for (const e of libVar.navModalMobileAnchor) {
+    e.id = libVar.__navModalMobileAncNumber;
 }
 
 for (let index = 1; index <= libVar.divSubNavAnc.length; index++) {
@@ -51,9 +54,12 @@ for (let index = 1; index <= libVar.divSubNav.length; index++) {
 for (let index = 1; index <= libVar.navDesktopContainer.length; index++) {
     document.getElementById(libVar.__containerNumber).id = libVar.__containerNumber + index;
 }
-for (let index = 1; index <= libVar.navModalAnchor.length; index++) {
+for (let index = 1; index <= libVar.navModalDesktopAnchor.length; index++) {
     document.getElementById(libVar.__navModalNumber).id = libVar.__navModalNumber + index;
-    document.getElementById(libVar.__navModalAncNumber).id = libVar.__navModalAncNumber + index;
+    document.getElementById(libVar.__navModalDesktopAncNumber).id = libVar.__navModalDesktopAncNumber + index;
+}
+for (let index = libVar.navModalMobileAnchor.length; index >= 1; index--) {
+    document.getElementById(libVar.__navModalMobileAncNumber).id = libVar.__navModalMobileAncNumber + index;
 }
 for (let index = 1; index <= libVar.dropdownList.length; index++) {
     document.getElementById(libVar.__dropdownNumber).id = libVar.__dropdownNumber + index;
@@ -141,9 +147,10 @@ for (let index = 1; index <= libVar.dropdownList.length; index++) {
 }
 // Modal
 for (let index = 1; index <= libVar.modalList.length; index++) {
-    const a = document.getElementById(libVar.__navModalAncNumber + index);
+    const d = document.getElementById(libVar.__navModalDesktopAncNumber + index);
     const navModal = document.getElementById(libVar.__navModalNumber + index);
-    a.addEventListener('click', function () {
+    // Desktop
+    d.addEventListener('click', function () {
         if (sessionStorage.getItem(libVar.modalNumberKey) === '' || sessionStorage.getItem(libVar.modalNumberKey) === navModal.id) {
             navModal.classList.toggle('active');
             sessionStorage.setItem(libVar.modalNumberKey, libVar.__navModalNumber + index);
@@ -164,6 +171,32 @@ for (let index = 1; index <= libVar.modalList.length; index++) {
             document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumberKey)).classList.remove('active-nav');
             sessionStorage.setItem(libVar.desktopContainerNumberKey, '');
         }
+    });
+    // Mobile
+    const m = document.getElementById(libVar.__navModalMobileAncNumber + index);
+    m.addEventListener('click', function () {
+        if (sessionStorage.getItem(libVar.modalNumberKey) === '' || sessionStorage.getItem(libVar.modalNumberKey) === navModal.id) {
+            navModal.classList.toggle('active');
+            sessionStorage.setItem(libVar.modalNumberKey, libVar.__navModalNumber + index);
+        }
+        if (sessionStorage.getItem(libVar.modalNumberKey) != navModal.id) {
+            navModal.classList.toggle('active');
+            if (sessionStorage.getItem(libVar.modalNumberKey) != '') {
+                document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.remove('active');
+                sessionStorage.setItem(libVar.modalNumberKey, libVar.__navModalNumber + index);
+            }
+        }
+
+        if (styleEl.sheet.cssRules.length > 1) {
+            styleSheet.deleteRule(0);
+            styleSheet.deleteRule(0);
+        }
+        if (sessionStorage.getItem(libVar.desktopContainerNumberKey) != '') {
+            document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumberKey)).classList.remove('active-nav');
+            sessionStorage.setItem(libVar.desktopContainerNumberKey, '');
+        }
+        libVar.navMobile.classList.remove('active');
+
     });
 }
 

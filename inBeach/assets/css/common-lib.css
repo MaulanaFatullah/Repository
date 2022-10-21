@@ -51,9 +51,17 @@ body {
 .container {
     padding: var(--container-padding);
 }
+.flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
 .flex-row {
     display: flex;
     flex-direction: row;
+}
+.flex-column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
 }
 .flex-column {
     display: flex;
@@ -62,6 +70,24 @@ body {
 .flex-grow {
     flex-grow: 1;
 }
+.text-align-left {
+    text-align: left;
+}
+.text-align-right {
+    text-align: right;
+}
+.text-align-center {
+    text-align: center;
+}
 .justify-content-center {
     justify-content: center;
+}
+.justify-content-around {
+    justify-content: space-around;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-evenly {
+    justify-content: space;
 }

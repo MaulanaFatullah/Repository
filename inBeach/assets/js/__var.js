@@ -16,13 +16,15 @@ export const divSubNavAnc = document.querySelectorAll('#nav-desktop .sub-nav > a
 export const divSubNav = document.querySelectorAll('#nav-desktop div.sub-nav');
 
 export const navDesktopContainer = document.querySelectorAll('#nav-desktop > div > div');
-export const navModalAnchor = document.querySelectorAll('#nav-desktop > a');
+export const navModalDesktopAnchor = document.querySelectorAll('#nav-desktop > a');
+export const navModalMobileAnchor = document.querySelectorAll('#nav-mobile > ul > li > a') 
 export const modalList = document.querySelectorAll('.modal-list > div');
 
 export const landingPage = document.querySelector('.landing-page');
 
 export const __containerNumber = 'nav-desktop-container-number-';
-export const __navModalAncNumber = 'modal-anchor-number-';
+export const __navModalDesktopAncNumber = 'd-modal-anchor-number-';
+export const __navModalMobileAncNumber = 'm-modal-anchor-number-';
 export const __navModalNumber = 'modal-number-';
 export const __dropdownNumber = 'dropdown-number-';
 export const __sublistNumber = 'sublist-number-';
