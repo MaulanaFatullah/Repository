@@ -71,29 +71,41 @@ for (let index = 1; index <= libVar.divSubNavAnc.length; index++) {
     const d = document.getElementById(libVar.__containerNumber + index);
 
     idDivSubNav.addEventListener('click', function () {
-
         if (sessionStorage.getItem(libVar.desktopContainerNumberKey) === '' || sessionStorage.getItem(libVar.desktopContainerNumberKey) === d.id) {
             d.classList.toggle('active-nav');
+            if (styleEl.sheet.cssRules.length == 0) {
+                styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
+                styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
+            } else {
+                styleSheet.deleteRule(0);
+                styleSheet.deleteRule(0);
+            }
             sessionStorage.setItem(libVar.desktopContainerNumberKey, libVar.__containerNumber + index);
         }
         if (sessionStorage.getItem(libVar.desktopContainerNumberKey) != d.id) {
             d.classList.toggle('active-nav');
+            if (styleEl.sheet.cssRules.length == 0) {
+                styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
+                styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
+            } else {
+                styleSheet.deleteRule(0);
+                styleSheet.deleteRule(0);
+            }
             if (sessionStorage.getItem(libVar.desktopContainerNumberKey) != '') {
-                document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumberKey)).classList.remove('active');
+                if (styleEl.sheet.cssRules.length == 0) {
+                    styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
+                    styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
+                } else {
+                    styleSheet.deleteRule(0);
+                    styleSheet.deleteRule(0);
+                }
+                document.getElementById(sessionStorage.getItem(libVar.desktopContainerNumberKey)).classList.remove('active-nav');
                 sessionStorage.setItem(libVar.desktopContainerNumberKey, libVar.__containerNumber + index);
             }
         }
-
+        // Modal
         if (sessionStorage.getItem(libVar.modalNumberKey) != '' && document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.contains('active')) {
             document.getElementById(sessionStorage.getItem(libVar.modalNumberKey)).classList.remove('active');
-        }
-        if (styleEl.sheet.cssRules.length > 1) {
-            styleSheet.deleteRule(0);
-            styleSheet.deleteRule(0);
-        }
-        if (styleEl.sheet.cssRules.length == 0) {
-            styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::before { transition: .4s;transform: translateY(17px) translateX(-7px) rotate(135deg); }', 0);
-            styleSheet.insertRule('#nav-desktop > #' + divSubNav.id + '> a > span::after { transform: translateX(-23px) translateY(2px) rotate(45deg); }', 0);
         }
     });
 }
@@ -143,7 +155,7 @@ for (let index = 1; index <= libVar.modalList.length; index++) {
                 sessionStorage.setItem(libVar.modalNumberKey, libVar.__navModalNumber + index);
             }
         }
-        
+
         if (styleEl.sheet.cssRules.length > 1) {
             styleSheet.deleteRule(0);
             styleSheet.deleteRule(0);
