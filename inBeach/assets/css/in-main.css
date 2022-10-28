@@ -183,7 +183,7 @@ main {
   animation: sea-waves-animation 0.8s var(--popup-animation) normal;
 }
 
-.modal.active{
+.modal.active {
   visibility: visible;
   transform: translateY(0);
   top: 0;
@@ -191,14 +191,18 @@ main {
 }
 .modal {
   visibility: hidden;
+  display: grid;
   transform: translateY(-100%);
-  opacity: .5;
+  opacity: 0.5;
   font-family: "Karla", sans-serif;
   overflow-y: scroll;
   padding: 2.5em;
-  margin-left: 5vw;
-  margin-top: 12vh;
   position: absolute;
+  margin-top: 12vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   top: -50vh;
   z-index: 131;
   max-width: 90vw;
@@ -220,7 +224,7 @@ main {
   font-weight: 600;
   line-height: 1.5em;
   word-spacing: 0.1em;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 .section-suggestion-form {
   max-width: 50%;
@@ -273,7 +277,7 @@ textarea:focus {
 }
 
 .social-media-icons span:hover {
-  transform: scale(.8);
+  transform: scale(0.8);
 }
 .social-media-icons span {
   cursor: pointer;
@@ -295,14 +299,15 @@ textarea:focus {
   padding: 30px 20px 30px 35px;
 }
 .arrow-down a:hover {
-  -webkit-animation: arrow-hover-animation var(--transition-1-5s) ease-in-out infinite;
+  -webkit-animation: arrow-hover-animation var(--transition-1-5s) ease-in-out
+    infinite;
   animation: arrow-hover-animation var(--transition-1-5s) ease-in-out infinite;
 }
 .arrow-down span {
   position: absolute;
 }
 .arrow-down span::after,
-.arrow-down span::before{
+.arrow-down span::before {
   content: "";
   bottom: 10px;
   position: absolute;
@@ -323,31 +328,69 @@ textarea:focus {
   max-width: 50%;
   padding-inline: 2em;
 }
-.section-source a:visited {
+.modal a:visited {
   color: var(--text-visited-color);
 }
-.section-source a:hover {
+.modal a:hover {
   color: var(--bg-second-color);
 }
-.section-source a {
+.modal a {
   text-decoration: none;
 }
 .section-source p {
   line-height: 2em;
 }
 .article-source,
-.image-source
-{
+.image-source {
   padding-bottom: 20px;
 }
 
 .article-source-title,
-.image-source-title
-{
+.image-source-title {
   font-size: 1.3em;
   font-weight: 600;
   padding-bottom: 5px;
 }
 .article-source-title {
   font-size: 1.2em;
+}
+
+.surfing .flex-column article {
+  margin-left: 10em;
+}
+.surf-list h1 {
+  margin-bottom: 1em;
+}
+.surf-list ul li {
+  font-size: 1.125em;
+  padding-bottom: 0.5em;
+}
+.surf-list {
+  position: sticky;
+  width: 20%;
+  left: 1em;
+  top: 2em;
+}
+.surf-article {
+  margin-top: -55vh;
+}
+.surf-article article {
+  margin-bottom: 1em;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.300);
+  padding-bottom: 1em;
+}
+.surf-article img {
+  border-radius: 10px;
+  width: 90%;
+}
+.surf-description p {
+  font-size: clamp(.7em, calc(1em + 10%), 1.4em);
+}
+.surf-description h2 {
+  margin-bottom: 2em;
+}
+.surf-description,
+.img-surf {
+  max-width: 50%;
+  margin-top: 1em;
 }

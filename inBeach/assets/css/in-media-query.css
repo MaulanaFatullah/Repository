@@ -108,6 +108,23 @@
 }
 
 @media screen and (max-width: 1080px) {
+  .surf-list {
+    display: none;
+  }
+  .surf-article img {
+    width: 100%;
+  }
+  .surf-article {
+    margin-top: 0;
+    padding: 2em;
+  }
+  .surfing .flex-column article {
+    margin-left: 0;
+    flex-direction: column;
+  }
+  .surf-description, .img-surf {
+    max-width: 100%;
+  }
   .about-two {
     flex-direction: column;
   }
