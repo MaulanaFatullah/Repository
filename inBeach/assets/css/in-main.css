@@ -374,23 +374,33 @@ textarea:focus {
 .surf-article {
   margin-top: -55vh;
 }
-.surf-article article {
+.in-article article {
   margin-bottom: 1em;
   border-bottom: 2px solid rgba(128, 128, 128, 0.300);
   padding-bottom: 1em;
 }
-.surf-article img {
+.in-article img {
   border-radius: 10px;
   width: 90%;
 }
-.surf-description p {
+.in-description p {
   font-size: clamp(.7em, calc(1em + 10%), 1.4em);
 }
-.surf-description h2 {
+.in-description h2 {
   margin-bottom: 2em;
 }
-.surf-description,
-.img-surf {
+.in-description,
+.img-in {
   max-width: 50%;
   margin-top: 1em;
+}
+.daytrips h1 {
+  padding-bottom: 1em;
+}
+.daytrips-article {
+  flex-grow: 1;
+  max-width: 50%;
+}
+.daytrips-hour p {
+  padding-block: 1em;
 }
