@@ -2,10 +2,12 @@ main {
   width: 100%;
   height: 100%;
 }
+
 .landing-page {
   display: flex;
   flex-direction: column;
 }
+
 .landing-page h1 {
   z-index: 100;
   font-family: "Seaweed Script", cursive;
@@ -18,16 +20,21 @@ main {
   -webkit-animation: landing-text var(--transition-1s) ease-in-out normal;
   animation: landing-text var(--transition-1s) ease-in-out normal;
 }
+
 .beach-environment {
   height: 50vh;
 }
+
 .beach-environment img {
   width: auto;
   height: auto;
   position: relative;
 }
+
+/* Beach ball */
 .beach-environment img:nth-child(1) {
   width: var(--beach-environment-img-1-width);
+
   bottom: 100px;
   left: 100px;
   -webkit-animation: beach-environment-animation var(--transition-08s)
@@ -35,6 +42,8 @@ main {
   animation: beach-environment-animation var(--transition-08s)
     var(--popup-animation) normal;
 }
+
+/* Patrick */
 .beach-environment img:nth-child(2) {
   width: var(--beach-environment-img-2-width);
   top: 110px;
@@ -44,8 +53,11 @@ main {
   animation: beach-environment-animation var(--transition-1s)
     var(--popup-animation) normal;
 }
+
+/* Umbrella Beach */
 .beach-environment img:nth-child(3) {
   width: var(--beach-environment-img-3-width);
+
   bottom: 0;
   top: 100px;
   left: 100px;
@@ -54,8 +66,11 @@ main {
   animation: beach-environment-animation var(--transition-1-2s)
     var(--popup-animation) normal;
 }
+
+/* Towel */
 .beach-environment img:nth-child(4) {
   width: var(--beach-environment-img-4-width);
+
   z-index: -1;
   top: 100px;
   left: -60px;
@@ -64,8 +79,11 @@ main {
   animation: beach-environment-animation var(--transition-1-5s)
     var(--popup-animation) normal;
 }
+
+/* Shell */
 .beach-environment img:nth-child(5) {
   width: var(--beach-environment-img-5-width);
+
   top: 150px;
   left: 100px;
   -webkit-animation: beach-environment-animation var(--transition-1s)
@@ -73,8 +91,11 @@ main {
   animation: beach-environment-animation var(--transition-1s)
     var(--popup-animation) normal;
 }
+
+/* Surfboard */
 .beach-environment img:nth-child(6) {
   width: var(--beach-environment-img-6-width);
+
   z-index: 1;
   position: absolute;
   right: 250px;
@@ -83,8 +104,11 @@ main {
   animation: beach-environment-animation var(--transition-08s)
     var(--popup-animation) normal;
 }
+
+/* Beach towel 2 */
 .beach-environment img:nth-child(7) {
   width: var(--beach-environment-img-7-width);
+
   position: absolute;
   right: 30px;
   -webkit-animation: beach-environment-animation var(--transition-08s)
@@ -92,8 +116,11 @@ main {
   animation: beach-environment-animation var(--transition-08s)
     var(--popup-animation) normal;
 }
+
+/* Rubber ring */
 .beach-environment img:nth-child(8) {
   width: var(--beach-environment-img-8-width);
+
   position: absolute;
   z-index: 9;
   transform: rotate(-90deg);
@@ -104,17 +131,20 @@ main {
   animation: beach-environment-animation var(--transition-1s)
     var(--popup-animation) normal;
 }
+
 .sea-waves {
   padding: 0;
   width: 100%;
   height: 40vh;
 }
+
 .sea-waves img {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: auto;
 }
+
 .sea-waves img:nth-child(1) {
   z-index: -1;
   bottom: 100px;
@@ -122,18 +152,21 @@ main {
     normal;
   animation: sea-waves-animation-residual 2s var(--popup-animation) normal;
 }
+
 .sea-waves img:nth-child(2) {
   z-index: 1;
   bottom: 50px;
   -webkit-animation: sea-waves-animation 1.4s var(--popup-animation) normal;
   animation: sea-waves-animation 1.4s var(--popup-animation) normal;
 }
+
 .sea-waves img:nth-child(4) {
   z-index: 2;
   bottom: 10px;
   -webkit-animation: sea-waves-animation 1.2s var(--popup-animation) normal;
   animation: sea-waves-animation 1.2s var(--popup-animation) normal;
 }
+
 .sea-waves img:nth-child(3) {
   z-index: 3;
   bottom: -20px;
@@ -142,12 +175,14 @@ main {
   animation: sea-waves-animation var(--transition-1s) var(--popup-animation)
     normal;
 }
+
 .sea-waves img:nth-child(5) {
   z-index: 4;
   bottom: -60px;
   -webkit-animation: sea-waves-animation 0.8s var(--popup-animation) normal;
   animation: sea-waves-animation 0.8s var(--popup-animation) normal;
 }
+
 .modal.active {
   visibility: visible;
   transform: translateY(0);
@@ -241,6 +276,7 @@ textarea:focus {
   font-size: 1.15em;
   border-color: var(--bg-second-color);
 }
+
 .social-media-icons a {
   color: inherit;
 }
@@ -250,14 +286,17 @@ textarea:focus {
 .social-media-icons span {
   cursor: pointer;
   font-size: 5em;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.404);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.404);
   padding-inline: 0.2em;
+  /* margin-block: 1em; */
   transition: all var(--transition-04s);
 }
+
 .section-about .arrow-down {
   visibility: hidden;
 }
 .arrow-down {
+  /* margin-block: 20px; */
   width: 100%;
 }
 .arrow-down a {
@@ -309,6 +348,7 @@ textarea:focus {
 .image-source {
   padding-bottom: 20px;
 }
+
 .article-source-title,
 .image-source-title {
   font-size: 1.3em;
@@ -318,6 +358,7 @@ textarea:focus {
 .article-source-title {
   font-size: 1.2em;
 }
+
 .surfing .flex-column article {
   margin-left: 10em;
 }
@@ -339,16 +380,16 @@ textarea:focus {
 }
 .in-article article {
   margin-bottom: 1em;
-  border-bottom: 2px solid rgba(128, 128, 128, 0.3);
+  border-bottom: 2px solid rgba(128, 128, 128, 0.300);
   padding-bottom: 1em;
 }
 .in-article img {
   border-radius: 10px;
   width: 100%;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.200);
 }
 .in-description p {
-  font-size: clamp(0.7em, calc(1em + 10%), 1.4em);
+  font-size: clamp(.7em, calc(1em + 10%), 1.4em);
 }
 .in-description h2 {
   margin-bottom: 2em;
