@@ -91,3 +91,6 @@ body {
 .justify-content-evenly {
     justify-content: space;
 }
+.hidden {
+    display: none;
+}

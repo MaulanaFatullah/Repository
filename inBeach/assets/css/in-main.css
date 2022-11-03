@@ -257,7 +257,7 @@ input,
 textarea {
   outline: none;
   color: var(--bg-main-color);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.1em;
   border-radius: 10px;
   padding: 5px;
@@ -271,11 +271,15 @@ input:focus,
 textarea:focus {
   cursor: initial;
   color: var(--bg-second-color);
+  font-weight: 500;
   padding: 10px;
   font-size: 1.15em;
   border-color: var(--bg-second-color);
 }
 
+.social-media-icons a {
+  color: inherit;
+}
 .social-media-icons span:hover {
   transform: scale(0.8);
 }
@@ -328,13 +332,13 @@ textarea:focus {
   max-width: 50%;
   padding-inline: 2em;
 }
-.modal a:visited {
+.section-source a:visited {
   color: var(--text-visited-color);
 }
-.modal a:hover {
+.section-source a:hover {
   color: var(--bg-second-color);
 }
-.modal a {
+.section-source a {
   text-decoration: none;
 }
 .section-source p {

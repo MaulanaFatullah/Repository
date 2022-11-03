@@ -4,71 +4,82 @@ const styleEl = document.createElement('style');
 document.head.appendChild(styleEl);
 const styleSheet = styleEl.sheet;
 
+
 window.addEventListener('load', function () {
-    if (sessionStorage.getItem(libVar.dropdownKey) === null || sessionStorage.getItem(libVar.sublistKey) === null || sessionStorage.getItem(libVar.ulSubNavMobileKey) === null || sessionStorage.getItem(libVar.desktopContainerNumberKey) === null || sessionStorage.getItem(libVar.modalNumberKey) === null) {
-        sessionStorage.setItem(libVar.dropdownKey, '');
-        sessionStorage.setItem(libVar.sublistKey, '');
-        sessionStorage.setItem(libVar.ulSubNavMobileKey, '');
-        sessionStorage.setItem(libVar.desktopContainerNumberKey, '');
-        sessionStorage.setItem(libVar.modalNumberKey, '');
+    function isStorageExist() {
+        if (typeof (Storage) === undefined) {
+            alert('Browser yang kamu gunakan tidak mendukung Web Storage');
+            return false;
+        }
+        return true;
+    }
+    if (isStorageExist()) {
+        if (sessionStorage.getItem(libVar.dropdownKey) === null || sessionStorage.getItem(libVar.sublistKey) === null || sessionStorage.getItem(libVar.ulSubNavMobileKey) === null || sessionStorage.getItem(libVar.desktopContainerNumberKey) === null || sessionStorage.getItem(libVar.modalNumberKey) === null) {
+            sessionStorage.setItem(libVar.dropdownKey, '');
+            sessionStorage.setItem(libVar.sublistKey, '');
+            sessionStorage.setItem(libVar.ulSubNavMobileKey, '');
+            sessionStorage.setItem(libVar.desktopContainerNumberKey, '');
+            sessionStorage.setItem(libVar.modalNumberKey, '');
+        }
     }
 });
-
-for (let a of libVar.dropdownList) {
-    a.id = libVar.__dropdownNumber;
-}
-for (const b of libVar.dropdownSubList) {
-    b.id = libVar.__sublistNumber;
-}
-for (const c of libVar.subNavAnchor) {
-    c.id = libVar.__subNavNumber;
-}
-for (const d of libVar.ulSubNav) {
-    d.id = libVar.__ulSubNavNumber;
-}
-for (const e of libVar.divSubNavAnc) {
-    e.id = libVar.__divSubNavNumber;
-}
-for (const f of libVar.navDesktopContainer) {
-    f.id = libVar.__containerNumber;
-}
-for (const g of libVar.navModalDesktopAnchor) {
-    g.id = libVar.__navModalDesktopAncNumber;
-}
-for (const h of libVar.modalList) {
-    h.id = libVar.__navModalNumber;
-}
-for (const e of libVar.divSubNav) {
-    e.id = libVar.__divSubNavAncNumber;
-}
-for (const e of libVar.navModalMobileAnchor) {
-    e.id = libVar.__navModalMobileAncNumber;
-}
-
-for (let index = 1; index <= libVar.divSubNavAnc.length; index++) {
-    document.getElementById(libVar.__divSubNavNumber).id = libVar.__divSubNavNumber + index;
-}
-for (let index = 1; index <= libVar.divSubNav.length; index++) {
-    document.getElementById(libVar.__divSubNavAncNumber).id = libVar.__divSubNavAncNumber + index;
-}
-for (let index = 1; index <= libVar.navDesktopContainer.length; index++) {
-    document.getElementById(libVar.__containerNumber).id = libVar.__containerNumber + index;
-}
-for (let index = 1; index <= libVar.navModalDesktopAnchor.length; index++) {
-    document.getElementById(libVar.__navModalNumber).id = libVar.__navModalNumber + index;
-    document.getElementById(libVar.__navModalDesktopAncNumber).id = libVar.__navModalDesktopAncNumber + index;
-}
-for (let index = libVar.navModalMobileAnchor.length; index >= 1; index--) {
-    document.getElementById(libVar.__navModalMobileAncNumber).id = libVar.__navModalMobileAncNumber + index;
-}
-for (let index = 1; index <= libVar.dropdownList.length; index++) {
-    document.getElementById(libVar.__dropdownNumber).id = libVar.__dropdownNumber + index;
-    document.getElementById(libVar.__sublistNumber).id = libVar.__sublistNumber + index;
-}
-for (let v = 1; v <= libVar.subNavAnchor.length; v++) {
-    document.getElementById(libVar.__subNavNumber).id = libVar.__subNavNumber + v;
-    document.getElementById(libVar.__ulSubNavNumber).id = libVar.__ulSubNavNumber + v;
-}
+function setIDofElement() {
+    for (let a of libVar.dropdownList) {
+        a.id = libVar.__dropdownNumber;
+    }
+    for (const b of libVar.dropdownSubList) {
+        b.id = libVar.__sublistNumber;
+    }
+    for (const c of libVar.subNavAnchor) {
+        c.id = libVar.__subNavNumber;
+    }
+    for (const d of libVar.ulSubNav) {
+        d.id = libVar.__ulSubNavNumber;
+    }
+    for (const e of libVar.divSubNavAnc) {
+        e.id = libVar.__divSubNavNumber;
+    }
+    for (const f of libVar.navDesktopContainer) {
+        f.id = libVar.__containerNumber;
+    }
+    for (const g of libVar.navModalDesktopAnchor) {
+        g.id = libVar.__navModalDesktopAncNumber;
+    }
+    for (const h of libVar.modalList) {
+        h.id = libVar.__navModalNumber;
+    }
+    for (const e of libVar.divSubNav) {
+        e.id = libVar.__divSubNavAncNumber;
+    }
+    for (const e of libVar.navModalMobileAnchor) {
+        e.id = libVar.__navModalMobileAncNumber;
+    }
+    
+    for (let index = 1; index <= libVar.divSubNavAnc.length; index++) {
+        document.getElementById(libVar.__divSubNavNumber).id = libVar.__divSubNavNumber + index;
+    }
+    for (let index = 1; index <= libVar.divSubNav.length; index++) {
+        document.getElementById(libVar.__divSubNavAncNumber).id = libVar.__divSubNavAncNumber + index;
+    }
+    for (let index = 1; index <= libVar.navDesktopContainer.length; index++) {
+        document.getElementById(libVar.__containerNumber).id = libVar.__containerNumber + index;
+    }
+    for (let index = 1; index <= libVar.navModalDesktopAnchor.length; index++) {
+        document.getElementById(libVar.__navModalNumber).id = libVar.__navModalNumber + index;
+        document.getElementById(libVar.__navModalDesktopAncNumber).id = libVar.__navModalDesktopAncNumber + index;
+    }
+    for (let index = libVar.navModalMobileAnchor.length; index >= 1; index--) {
+        document.getElementById(libVar.__navModalMobileAncNumber).id = libVar.__navModalMobileAncNumber + index;
+    }
+    for (let index = 1; index <= libVar.dropdownList.length; index++) {
+        document.getElementById(libVar.__dropdownNumber).id = libVar.__dropdownNumber + index;
+        document.getElementById(libVar.__sublistNumber).id = libVar.__sublistNumber + index;
+    }
+    for (let v = 1; v <= libVar.subNavAnchor.length; v++) {
+        document.getElementById(libVar.__subNavNumber).id = libVar.__subNavNumber + v;
+        document.getElementById(libVar.__ulSubNavNumber).id = libVar.__ulSubNavNumber + v;
+    }
+}setIDofElement();
 
 // Nav Dropdown
 for (let index = 1; index <= libVar.divSubNavAnc.length; index++) {
