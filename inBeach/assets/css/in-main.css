@@ -332,13 +332,13 @@ textarea:focus {
   max-width: 50%;
   padding-inline: 2em;
 }
-.section-source a:visited {
+.source-link a:visited {
   color: var(--text-visited-color);
 }
-.section-source a:hover {
+.source-link a:hover {
   color: var(--bg-second-color);
 }
-.section-source a {
+.source-link a {
   text-decoration: none;
 }
 .section-source p {
