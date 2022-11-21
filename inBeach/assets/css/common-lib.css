@@ -1,96 +1,97 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;600&family=Seaweed+Script&display=swap");
 
 :root {
-    --bg-main-color: #ffb356;
-    --bg-second-color: #00cccc;
-    --base-color: #f1f1f1;
-    --text-visited-color: #3cadbc;
+  --bg-main-color: #ffb356;
+  --bg-second-color: #00cccc;
+  --base-color: #f1f1f1;
+  --text-visited-color: #3cadbc;
 
-    --container-padding: 20px;
+  --container-padding: 20px;
 
-    --initial-width-list: 9em;
-    --dropdown-list-initial-height: 2em;
+  --initial-width-list: 9.5em;
+  --dropdown-list-initial-height: 2em;
 
-    --dropdown-list-width: 18em;
-    --dropdown-list-height: 0em;
+  --dropdown-list-width: 18em;
+  --dropdown-list-height: 0em;
 
-    --transition-04s: 0.4s;
-    --transition-08s: 0.8s;
-    --transition-1s: 1s;
-    --transition-1-2s: 1.2s;
-    --transition-1-5s: 1.5s;
-    --transition-1-8s: 1.8s;
+  --transition-04s: 0.4s;
+  --transition-08s: 0.8s;
+  --transition-1s: 1s;
+  --transition-1-2s: 1.2s;
+  --transition-1-5s: 1.5s;
+  --transition-1-8s: 1.8s;
 
-    --popup-animation: cubic-bezier(0.2, -0.55, 0.27, 1.55);
+  --popup-animation: cubic-bezier(0.2, -0.55, 0.27, 1.55);
 
-    --beach-environment-img-1-width: 100px;
-    --beach-environment-img-2-width: 108px;
-    --beach-environment-img-3-width: 339px;
-    --beach-environment-img-4-width: 287px;
-    --beach-environment-img-5-width: 96px;
-    --beach-environment-img-6-width: 223px;
-    --beach-environment-img-7-width: 351px;
-    --beach-environment-img-8-width: 181px;
+  --beach-environment-img-1-width: 100px;
+  --beach-environment-img-2-width: 108px;
+  --beach-environment-img-3-width: 339px;
+  --beach-environment-img-4-width: 287px;
+  --beach-environment-img-5-width: 96px;
+  --beach-environment-img-6-width: 223px;
+  --beach-environment-img-7-width: 351px;
+  --beach-environment-img-8-width: 181px;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    position: fixed;
-    background: var(--bg-main-color);
-    width: 100%;
-    max-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: fixed;
+  background: var(--bg-main-color);
+  width: 100%;
+  max-height: 100vh;
 }
 
 .container {
-    padding: var(--container-padding);
+  padding: var(--container-padding);
 }
 .flex-row-reverse {
-    display: flex;
-    flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
 }
 .flex-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .flex-column-reverse {
-    display: flex;
-    flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }
 .flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .flex-grow {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 .text-align-left {
-    text-align: left;
+  text-align: left;
 }
 .text-align-right {
-    text-align: right;
+  text-align: right;
 }
 .text-align-center {
-    text-align: center;
+  text-align: center;
 }
 .justify-content-center {
-    justify-content: center;
+  justify-content: center;
 }
 .justify-content-around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 .justify-content-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 .justify-content-evenly {
-    justify-content: space;
+  justify-content: space;
 }
 .hidden {
-    display: none;
+  display: none;
 }

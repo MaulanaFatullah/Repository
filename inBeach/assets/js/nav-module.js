@@ -1,4 +1,4 @@
-import * as libVar from "./__var.js";
+import * as libVar from "./varLib.js";
 
 const styleEl = document.createElement('style');
 document.head.appendChild(styleEl);

@@ -206,7 +206,7 @@ main {
   top: -50vh;
   z-index: 131;
   max-width: 90vw;
-  max-height: max(600px, 75vh);
+  max-height: 600px;
   background-color: var(--base-color);
   border-radius: 10px;
   color: var(--bg-main-color);
