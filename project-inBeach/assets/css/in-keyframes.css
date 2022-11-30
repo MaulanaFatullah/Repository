@@ -1,0 +1,153 @@
+@keyframes dropdown-keyframe-animation {
+  from {
+    opacity: 0;
+    height: var(--dropdown-list-initial-height);
+    width: var(--initial-width-list);
+  }
+
+  to {
+    height: var(--dropdown-list-height);
+    width: var(--dropdown-list-width);
+  }
+}
+
+@-webkit-keyframes dropdown-keyframe-animation {
+  from {
+    opacity: 0;
+    height: var(--dropdown-list-initial-height);
+    width: var(--initial-width-list);
+  }
+
+  to {
+    height: var(--dropdown-list-height);
+    width: var(--dropdown-list-width);
+  }
+}
+
+@keyframes header-nav-animation {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes header-nav-animation {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sea-waves-animation {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sea-waves-animation-residual {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes sea-waves-animation {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes sea-waves-animation-residual {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes beach-environment-animation {
+  from {
+    transform: scale(0);
+    filter: blur(8px);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes beach-environment-animation {
+  from {
+    transform: scale(0);
+    filter: blur(8px);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes landing-text {
+  from {
+    transform: translateX(-2em);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes landing-text {
+  from {
+    transform: translateX(-2em);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes arrow-hover-animation {
+  25% {
+    transform: translateY(5px);
+  } 50% {
+    transform: translateY(0px);
+  } 75% {
+    transform: translateY(5px);
+  }
+}
