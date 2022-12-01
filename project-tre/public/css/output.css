@@ -678,6 +678,10 @@ video {
   height: 3rem;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -735,6 +739,10 @@ video {
   width: auto;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .max-w-\[200px\] {
   max-width: 200px;
 }
@@ -755,6 +763,18 @@ video {
 .-translate-x-1\/2 {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-decimal {
+  list-style-type: decimal;
 }
 
 .flex-row {
@@ -815,6 +835,30 @@ video {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-\[10rem\] {
+  border-radius: 10rem;
+}
+
+.rounded-\[5rem\] {
+  border-radius: 5rem;
+}
+
+.rounded-\[3rem\] {
+  border-radius: 3rem;
+}
+
+.rounded-\[4rem\] {
+  border-radius: 4rem;
 }
 
 .rounded-r-lg {
@@ -878,6 +922,21 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#E5E5E5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#B0ABAA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(176 171 170 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-95 {
   --tw-bg-opacity: 0.95;
 }
@@ -886,24 +945,40 @@ video {
   --tw-bg-opacity: 0.8;
 }
 
+.bg-opacity-60 {
+  --tw-bg-opacity: 0.6;
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
 
-.bg-opacity-60 {
-  --tw-bg-opacity: 0.6;
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+
+.bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/tr\:w-800\/TRE\/building\.png\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669867848327\'\)\] {
+  background-image: url('https://ik.imagekit.io/maulanafatullah/tr:w-800/TRE/building.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669867848327');
 }
 
 .bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/TRE\/building\.png\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669867848327\'\)\] {
   background-image: url('https://ik.imagekit.io/maulanafatullah/TRE/building.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669867848327');
 }
 
-.bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/800\/TRE\/building\.png\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669867848327\'\)\] {
-  background-image: url('https://ik.imagekit.io/maulanafatullah/800/TRE/building.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669867848327');
+.bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/tr\:w-800\/TRE\/handshake\.png\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669868553352\'\)\] {
+  background-image: url('https://ik.imagekit.io/maulanafatullah/tr:w-800/TRE/handshake.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669868553352');
 }
 
-.bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/tr\:w-800\/TRE\/building\.png\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669867848327\'\)\] {
-  background-image: url('https://ik.imagekit.io/maulanafatullah/tr:w-800/TRE/building.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669867848327');
+.bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/TRE\/handshake\.png\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669868553352\'\)\] {
+  background-image: url('https://ik.imagekit.io/maulanafatullah/TRE/handshake.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669868553352');
+}
+
+.bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/tr\:2-800\/TRE\/handshake\.png\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669868553352\'\)\] {
+  background-image: url('https://ik.imagekit.io/maulanafatullah/tr:2-800/TRE/handshake.png?ik-sdk-version=javascript-1.4.3&updatedAt=1669868553352');
+}
+
+.bg-\[url\(\'https\:\/\/ik\.imagekit\.io\/maulanafatullah\/tr\:w-800\/TRE\/verne-ho-0LAJfSNa-xQ-unsplash\.jpg\?ik-sdk-version\=javascript-1\.4\.3\&updatedAt\=1669874862989\'\)\] {
+  background-image: url('https://ik.imagekit.io/maulanafatullah/tr:w-800/TRE/verne-ho-0LAJfSNa-xQ-unsplash.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669874862989');
 }
 
 .bg-cover {
@@ -914,8 +989,8 @@ video {
   background-attachment: fixed;
 }
 
-.bg-scroll {
-  background-attachment: scroll;
+.bg-center {
+  background-position: center;
 }
 
 .object-cover {
@@ -929,6 +1004,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-8 {
@@ -1001,6 +1080,11 @@ video {
   padding-bottom: 3rem;
 }
 
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .pt-20 {
   padding-top: 5rem;
 }
@@ -1015,6 +1099,10 @@ video {
 
 .pl-5 {
   padding-left: 1.25rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .text-left {
@@ -1053,6 +1141,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
 }
 
 .font-semibold {
@@ -1099,6 +1192,21 @@ video {
   color: rgb(242 229 229 / var(--tw-text-opacity));
 }
 
+.text-rose-600 {
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
+}
+
+.text-dark {
+  --tw-text-opacity: 1;
+  color: rgb(43 58 85 / var(--tw-text-opacity));
+}
+
+.text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -1107,16 +1215,8 @@ video {
   opacity: 0;
 }
 
-.bg-blend-normal {
-  background-blend-mode: normal;
-}
-
 .bg-blend-multiply {
   background-blend-mode: multiply;
-}
-
-.bg-blend-darken {
-  background-blend-mode: darken;
 }
 
 .shadow-lg {
@@ -1429,6 +1529,10 @@ video {
     width: 8rem;
   }
 
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
   .lg\:translate-x-0 {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1485,6 +1589,11 @@ video {
     padding-bottom: 4rem;
   }
 
+  .lg\:py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
   .lg\:pt-0 {
     padding-top: 0px;
   }
@@ -1509,6 +1618,11 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:opacity-100 {
