@@ -6,11 +6,11 @@ window.onscroll = function () {
 
     if (window.pageYOffset > fixedNav) {
         header.classList.add('navbar-fixed');
-        // navMenu.classList.add('nav-padding');
+        navMenu.classList.add('nav-padding');
         treIcon.classList.add('tre-icon');
     } else {
         header.classList.remove('navbar-fixed');
-        // navMenu.classList.remove('nav-padding');
+        navMenu.classList.remove('nav-padding');
         treIcon.classList.remove('tre-icon');
 
     }
