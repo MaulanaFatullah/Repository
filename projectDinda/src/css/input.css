@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.leave-left-after {
+    @apply after:content-[''] after:inline-block after:h-4 after:w-4 after:bg-primary after:rounded-tr-[90px] after:rounded-bl-[90px];
+}
+.leave-right-after {
+    @apply after:content-[''] after:inline-block after:h-4 after:w-4 after:bg-primary after:rounded-tl-[90px] after:rounded-br-[90px];
+}
+.leave-left-before {
+    @apply before:content-[''] before:inline-block before:h-4 before:w-4 before:bg-primary before:rounded-tr-[90px] before:rounded-bl-[90px];
+}
+.leave-right-before {
+    @apply before:content-[''] before:inline-block before:h-4 before:w-4 before:bg-primary before:rounded-tl-[90px] before:rounded-br-[90px];
+}
 .hamburger-menu span:nth-child(1) {
     @apply mb-3;
 }

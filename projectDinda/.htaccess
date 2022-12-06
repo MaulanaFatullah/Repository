@@ -1,0 +1,24 @@
+RewriteEngine on
+
+# Ensure all directory URLs have a trailing slash.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\/$
+RewriteCond %{REQUEST_URI} !\/[^\/]*\.[^\/]+$
+RewriteRule .* http://%{HTTP_HOST}%{REQUEST_URI}/ [L,R=301]
+# Same for HTTPS:
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\/$
+RewriteCond %{REQUEST_URI} !\/[^\/]*\.[^\/]+$
+RewriteRule .*
+
+
+
+#example.com/page will display the contents of example.com/page.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+#301 from example.com/page.html to example.com/page
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
