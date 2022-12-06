@@ -520,7 +520,7 @@ div#contact {
   position: relative;
   top: -100px;
   margin: 0 auto;
-  width: 30%;
+  width: 50%;
   padding-bottom: 20px;
   border-bottom: 3px solid var(--accent-color);
 }
@@ -644,22 +644,22 @@ input#email:focus {
 }
 
 .slide:nth-child(1) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-1.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-1.jpeg");
 }
 .slide:nth-child(2) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-2.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-2.jpeg");
 }
 
 .slide:nth-child(3) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-3.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-3.jpeg");
 }
 
 .slide:nth-child(4) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-4.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-4.jpeg");
 }
 
 .slide:nth-child(5) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-5.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-5.jpeg");
 }
 
 #slideshow-two {
@@ -667,22 +667,22 @@ input#email:focus {
 }
 
 .slide-two:nth-child(1) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-1.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-1.jpeg");
 }
 .slide-two:nth-child(2) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-2.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-2.jpeg");
 }
 
 .slide-two:nth-child(3) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-3.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-3.jpeg");
 }
 
 .slide-two:nth-child(4) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-4.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-4.jpeg");
 }
 
 .slide-two:nth-child(5) {
-  background-image: url("https://ik.imagekit.io/maulanafatullah/tr:w-800/pic-5.jpeg");
+  background-image: url("https://ik.imagekit.io/maulanafatullah/Kryon/tr:w-800/pic-5.jpeg");
 }
 
 @keyframes slide {
