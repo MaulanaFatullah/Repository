@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#E7F6F2',
-        secondary: '#395B64',
-        dark: '#2C3333',
+        primary: '#E15D48',
+        secondary: '#FF8356',
+        'shape-green': '#AFC966',
+        'shape-yellow': '#FAC172',
+        main: '#8AD6CA',
       },
       fontFamily: {
         philosopher: 'Philosopher',
