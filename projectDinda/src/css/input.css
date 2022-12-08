@@ -5,7 +5,9 @@
 .transition-700 {
     @apply transition-all duration-700;
 }
-
+.anm-img-scale-90 {
+    @apply w-full object-cover rounded-xl group-hover:scale-90 group-hover:shadow-2xl;
+}
 .leave-left-after {
     @apply after:content-[''] after:inline-block after:h-4 after:w-4 after:bg-primary after:rounded-tr-[90px] after:rounded-bl-[90px];
 }

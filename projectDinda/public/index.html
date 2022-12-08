@@ -29,11 +29,11 @@
         </header>
         <main>
             <!-- Home Start -->
-            <section class="w-full h-[80vh] pt-10 ">
-                <div class="container mx-auto">
-                    <div class="flex flex-col justify-center items-center">
-                        <p class="text-sm uppercase">Graphic Designer | Illustrator</p>
-                        <h1 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-9xl uppercase font-philosopher">
+            <section class="w-full h-[80vh] ">
+                <div class="container h-full mx-auto">
+                    <div class="flex h-full flex-col justify-center items-center">
+                        <p class="text-xs md:text-sm uppercase">Graphic Designer | Illustrator</p>
+                        <h1 class="text-center text-4xl sm:text-5xl md:text-7xl lg:text-9xl uppercase font-philosopher">
                             Whereas recognition <span class="normal-case text-2xl sm:text-3xl lg:text-6xl block">of
                                 the</span><span
                                 class="text-3xl sm:text-4xl lg:text-8xl normal-case font-bold block">inherent
@@ -65,94 +65,118 @@
             <section class="w-full">
                 <div class="container mx-auto">
                     <div class="flex flex-col px-6 lg:px-32 font-amita">
-                        <div class="w-full py-20">
-                            <figure class="relative group">
-                                <img src="img/pic-1.jpg" alt="Dango"
-                                    class="w-full md:w-1/3 object-cover rounded-xl group-hover:scale-90 group-hover:shadow-2xl transition-700">
+                        <div class="w-full py-20 bg-blue">
+                            <figure class="w-full md:w-1/3 relative group">
+                                <picture>
+                                    <source class="w-full" media="(min-width:1200px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-1200/Dinda/pic-1.jpg">
+                                    <source class="w-full" media="(min-width:800px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-1.jpg">
+                                    <source class="w-full" media="(min-width:400px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-400/Dinda/pic-1.jpg">
+                                    <img src="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-1.jpg" alt="Dango" class="anm-img-scale-90 transition-700">
+                                </picture>
                                 <figcaption
-                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-lighten scale-50 group-hover:text-inherit lg-project-left transition-700">
+                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-luminosity scale-50 group-hover:text-inherit lg-project-left transition-700">
                                     Dango<p class="font-philosopher text-4xl lg:text-xl">Illustration</p>
                                 </figcaption>
                                 <div class="bg-gradient-to-r from-[#FEDED2] to-[#D6F3CA] bg-project-blur"></div>
                                 <div class="bg-project-blur-accent-bl"></div>
                                 <div class="bg-project-blur-accent-tr"></div>
-                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 lg:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
-                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 left-64 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 md:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 right-0 md:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
                             </figure>
                         </div>
-                        <div class="w-full py-20">
-                            <figure class="relative group lg:flex lg:flex-row-reverse">
-                                <img src="img/pic-2.jpg" alt="Noodles"
-                                    class="w-full md:w-1/3 object-cover rounded-xl group-hover:scale-90 group-hover:shadow-2xl transition-700">
+                        <div class="w-full lg:flex lg:flex-row-reverse py-20">
+                            <figure class="w-full md:w-1/3 relative group">
+                                <picture>
+                                    <source class="w-full" media="(min-width:1200px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-1200/Dinda/pic-2.jpg">
+                                    <source class="w-full" media="(min-width:800px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-2.jpg">
+                                    <source class="w-full" media="(min-width:400px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-400/Dinda/pic-2.jpg">
+                                    <img src="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-2.jpg" alt="Noodles" class="anm-img-scale-90 transition-700">
+                                </picture>
                                 <figcaption
-                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-lighten scale-50 group-hover:text-inherit lg-project-right transition-700">
+                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-luminosity scale-50 group-hover:text-inherit lg-project-right transition-700">
                                     Noodles<p class="font-philosopher text-4xl lg:text-xl">Illustration</p>
                                 </figcaption>
                                 <div class="bg-gradient-to-r from-[#CD4526] to-[#A3643A] bg-project-blur"></div>
                                 <div class="bg-project-blur-accent-bl"></div>
                                 <div class="bg-project-blur-accent-tr"></div>
-                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 lg:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
-                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 left-64 lg:right-64 lg:left-auto group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 md:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 right-0 md:right-auto md:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
                             </figure>
                         </div>
                         <div class="w-full py-20">
-                            <figure class="relative group">
-                                <img src="img/pic-3.jpg" alt="Anniversary"
-                                    class="w-full md:w-1/3 object-cover rounded-xl group-hover:scale-90 group-hover:shadow-2xl transition-700">
+                            <figure class="w-full md:w-1/3 relative group">
+                                <picture>
+                                    <source class="w-full" media="(min-width:1200px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-1200/Dinda/pic-3.jpg">
+                                    <source class="w-full" media="(min-width:800px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-3.jpg">
+                                    <source class="w-full" media="(min-width:400px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-400/Dinda/pic-3.jpg">
+                                    <img src="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-3.jpg" alt="Anniversary" class="anm-img-scale-90 transition-700">
+                                </picture>
                                 <figcaption
-                                    class="pt-4 text-3xl sm:text-4xl lg:text-9xl text-right text-secondary mix-blend-lighten group-hover:text-inherit lg-project-left transition-700">
+                                    class="pt-4 text-3xl sm:text-4xl lg:text-9xl text-right text-secondary mix-blend-luminosity group-hover:text-inherit lg-project-left transition-700">
                                     Anniversary<p class="font-philosopher pt-4 text-xl lg:text-xl">Illustration</p>
                                 </figcaption>
                                 <div class="bg-gradient-to-r from-[#F8F6E7] to-[#404040] bg-project-blur"></div>
                                 <div class="bg-project-blur-accent-bl"></div>
                                 <div class="bg-project-blur-accent-tr"></div>
-                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 lg:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
-                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 left-64 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 md:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 right-0 md:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
                             </figure>
                         </div>
-                        <div class="w-full py-20">
-                            <figure class="relative group lg:flex lg:flex-row-reverse">
-                                <img src="img/pic-4.png" alt="Selfie"
-                                    class="w-full md:w-1/3 object-cover rounded-xl group-hover:scale-90 group-hover:shadow-2xl transition-700">
+                        <div class="w-full lg:flex lg:flex-row-reverse py-20">
+                            <figure class="w-full md:w-1/3 relative group">
+                                <picture>
+                                    <source class="w-full" media="(min-width:1200px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-1200/Dinda/pic-4.png">
+                                    <source class="w-full" media="(min-width:800px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-4.png">
+                                    <source class="w-full" media="(min-width:400px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-400/Dinda/pic-4.png">
+                                    <img src="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-4.png" alt="Selfie" class="anm-img-scale-90 transition-700">
+                                </picture>
                                 <figcaption
-                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-lighten scale-50 group-hover:text-inherit lg-project-right transition-700">
+                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-luminosity scale-50 group-hover:text-inherit lg-project-right transition-700">
                                     Selfie<p class="font-philosopher text-4xl lg:text-xl">Illustration</p>
                                 </figcaption>
-                                <div class="bg-gradient-to-r from-[#EBE8BF] to-[#EFB3B3] bg-project-blur"></div>
+                                <div class="bg-gradient-to-r from-[#CD4526] to-[#A3643A] bg-project-blur"></div>
                                 <div class="bg-project-blur-accent-bl"></div>
                                 <div class="bg-project-blur-accent-tr"></div>
-                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 lg:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
-                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 left-64 lg:right-64 lg:left-auto group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 md:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 right-0 md:right-auto md:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
                             </figure>
                         </div>
                         <div class="w-full py-20">
-                            <figure class="relative group">
-                                <img src="img/pic-5.png" alt="Girl"
-                                    class="w-full md:w-1/3 object-cover rounded-xl group-hover:scale-90 group-hover:shadow-2xl transition-700">
+                            <figure class="w-full md:w-1/3 relative group">
+                                <picture>
+                                    <source class="w-full" media="(min-width:1200px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-1200/Dinda/pic-5.png">
+                                    <source class="w-full" media="(min-width:800px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-5.png">
+                                    <source class="w-full" media="(min-width:400px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-400/Dinda/pic-5.png">
+                                    <img src="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-5.png" alt="Girsl" class="anm-img-scale-90 transition-700">
+                                </picture>
                                 <figcaption
-                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-lighten scale-50 group-hover:text-inherit lg-project-left transition-700">
+                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-luminosity scale-50 group-hover:text-inherit lg-project-left transition-700">
                                     Girl<p class="font-philosopher text-4xl lg:text-xl">Illustration</p>
                                 </figcaption>
                                 <div class="bg-gradient-to-r from-[#744308] to-[#AD6E5D] bg-project-blur"></div>
                                 <div class="bg-project-blur-accent-bl"></div>
                                 <div class="bg-project-blur-accent-tr"></div>
-                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 lg:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
-                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 left-64 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 md:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 right-0 md:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
                             </figure>
                         </div>
-                        <div class="w-full py-20">
-                            <figure class="relative group lg:flex lg:flex-row-reverse">
-                                <img src="img/pic-6.jpg" alt="Cat"
-                                    class="w-full md:w-1/3 object-cover rounded-xl group-hover:scale-90 group-hover:shadow-2xl transition-700">
+                        <div class="w-full lg:flex lg:flex-row-reverse py-20">
+                            <figure class="w-full md:w-1/3 relative group">
+                                <picture>
+                                    <source class="w-full" media="(min-width:1200px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-1200/Dinda/pic-6.jpg">
+                                    <source class="w-full" media="(min-width:800px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-6.jpg">
+                                    <source class="w-full" media="(min-width:400px)" srcset="https://ik.imagekit.io/maulanafatullah/tr:w-400/Dinda/pic-6.jpg">
+                                    <img src="https://ik.imagekit.io/maulanafatullah/tr:w-800/Dinda/pic-6.jpg" alt="Cat" class="anm-img-scale-90 transition-700">
+                                </picture>
                                 <figcaption
-                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-lighten scale-50 group-hover:text-inherit lg-project-right transition-700">
+                                    class="pt-4 text-5xl lg:text-9xl text-right text-secondary mix-blend-luminosity scale-50 group-hover:text-inherit lg-project-right transition-700">
                                     Cat<p class="font-philosopher text-4xl lg:text-xl">Illustration</p>
                                 </figcaption>
-                                <div class="bg-gradient-to-r from-[#A4C0CE] to-[#E8D5CF] bg-project-blur"></div>
+                                <div class="bg-gradient-to-r from-[#CD4526] to-[#A3643A] bg-project-blur"></div>
                                 <div class="bg-project-blur-accent-bl"></div>
                                 <div class="bg-project-blur-accent-tr"></div>
-                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 lg:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
-                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 left-64 lg:right-64 lg:left-auto group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-green rounded-lg absolute bottom-10 lg:-bottom-10 md:-right-10 group-hover:scale-110 transition-700 -z-10"></div>
+                                <div class="w-32 h-32 bg-shape-yellow rounded-lg absolute -top-10 right-0 md:right-auto md:-left-10 group-hover:scale-110 transition-700 -z-10"></div>
                             </figure>
                         </div>
                         <div class="w-full flex justify-center items-center">
@@ -193,7 +217,7 @@
                         / Failing/Dreaming / Talking /Sleeping Failing/Dreaming / Talking /Sleep </marquee>
                 </div>
                 <div class="flex justify-center py-6">
-                    <img src="img/pic-5.png" alt="Dango" class="w-full lg:w-1/3 rounded-xl scale-90">
+                    <img src="img/pic-5.png" alt="Dango" class="w-full sm:w-1/2 md:w-1/3 rounded-xl scale-90 shadow-xl">
                 </div>
             </section>
             <!-- Another Project End -->
