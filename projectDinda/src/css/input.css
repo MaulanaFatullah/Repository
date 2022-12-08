@@ -26,6 +26,9 @@
 .hamburger-menu span {
     @apply my-2 block h-[2px] w-10 bg-primary rounded-xl transition-700;
 }
+.hamburger-menu-contact span {
+    @apply my-2 block h-[2px] w-10 bg-primary md:bg-main rounded-xl transition-700;
+}
 
 
 #nav-bar.navbar-active {
@@ -39,6 +42,16 @@
     @apply rotate-45 origin-left;
 }
 .hamburger-menu.active span {
+    @apply w-7 bg-main md:bg-primary;
+}
+
+.hamburger-menu-contact.active span:nth-child(2) {
+    @apply -rotate-45 origin-left;
+}
+.hamburger-menu-contact.active span:nth-child(1) {
+    @apply rotate-45 origin-left;
+}
+.hamburger-menu-contact.active span {
     @apply w-7 bg-main md:bg-primary;
 }
 
