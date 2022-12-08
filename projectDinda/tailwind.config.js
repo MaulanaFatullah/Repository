@@ -9,6 +9,7 @@ module.exports = {
         'shape-green': '#AFC966',
         'shape-yellow': '#FAC172',
         main: '#8AD6CA',
+        'main-50': 'rgba(138,214,202 , .5)',
       },
       fontFamily: {
         philosopher: 'Philosopher',
