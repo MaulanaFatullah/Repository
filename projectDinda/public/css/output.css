@@ -590,6 +590,10 @@ video {
   right: 0px;
 }
 
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
 .z-\[87658768\] {
   z-index: 87658768;
 }
@@ -614,6 +618,14 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.-mt-10 {
+  margin-top: -2.5rem;
 }
 
 .block {
@@ -921,6 +933,16 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.px-\[5\%\] {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.py-\[2\.5\%\] {
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
 }
 
 .pt-16 {
@@ -1507,6 +1529,10 @@ video {
     right: 0px;
   }
 
+  .md\:-mt-10 {
+    margin-top: -2.5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1653,10 +1679,6 @@ video {
     display: inline;
   }
 
-  .lg\:flex {
-    display: flex;
-  }
-
   .lg\:h-32 {
     height: 8rem;
   }
@@ -1677,16 +1699,16 @@ video {
     flex-direction: row;
   }
 
-  .lg\:flex-row-reverse {
-    flex-direction: row-reverse;
-  }
-
   .lg\:justify-end {
     justify-content: flex-end;
   }
 
   .lg\:p-\[2\.5\%\] {
     padding: 2.5%;
+  }
+
+  .lg\:p-\[2\%\] {
+    padding: 2%;
   }
 
   .lg\:px-0 {
@@ -1702,6 +1724,16 @@ video {
   .lg\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .lg\:py-\[1\%\] {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  .lg\:px-\[2\.5\%\] {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
   }
 
   .lg\:pt-12 {
