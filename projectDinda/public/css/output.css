@@ -1173,6 +1173,10 @@ video {
   transition-duration: 700ms;
 }
 
+.hamburger-menu-contact span:nth-child(2) {
+  width: 1.5rem;
+}
+
 .hamburger-menu-contact span {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
